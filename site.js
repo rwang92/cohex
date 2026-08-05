@@ -8,7 +8,7 @@
 
   /* Mirrors the production Swift constants. scripts/tests/site_policy_test.sh
      intentionally fails when either side changes without the other. */
-  var CoHexNativeVisualSpec = {
+  var CohexNativeVisualSpec = {
     monitor: {
       compact: {
         diameter: 108,
@@ -70,7 +70,7 @@
       exploreFeatures: "了解核心功能",
       hold: "按住",
       choose: "选择",
-      heroMonitorCaption: "当前 Task · tok/s",
+      heroMonitorCaption: "Weekly 剩余 · 68%",
       heroVisualDescription: "动画展示正确布局的 Nintendo Switch Pro Controller：按住 L，用右摇杆选择六边形 Monitor 上的 Task，状态边同时显示活跃、等待输入、完成与错误。",
       recentEyebrow: "Recent 6 · Token Monitor",
       recentTitleLine1: "状态在边上，",
@@ -90,7 +90,7 @@
       stepHold: "按住 L",
       stepChoose: "右摇杆选择",
       stepRelease: "松开切换",
-      recentDemoDescription: "Compact Monitor 展开为 Recent 6 后，五种状态依次突出。中央显示当前 Task 的 Token 生成速率和本机估算。",
+      recentDemoDescription: "Compact Monitor 默认仅显示 Weekly 剩余比例 68%。展开为 Recent 6 后，五种状态依次突出；中央显示 24.6 tok/s、Weekly 68% 与本机估算。",
       stateLegendLabel: "Task 状态图例",
       stateCycleDescription: "状态会自动循环。选择任一状态可暂停循环，并突出轮盘中对应的边。",
       recentReplayLabel: "重播状态演示",
@@ -209,7 +209,7 @@
       exploreFeatures: "Explore the core features",
       hold: "Hold",
       choose: "Choose",
-      heroMonitorCaption: "Current task · tok/s",
+      heroMonitorCaption: "Weekly remaining · 68%",
       heroVisualDescription: "An animation shows a correctly arranged Nintendo Switch Pro Controller. Hold L and use the right stick to choose a task while the Monitor edges show active, needs input, complete, and error states.",
       recentEyebrow: "Recent 6 · Token Monitor",
       recentTitleLine1: "Status on the edge.",
@@ -229,7 +229,7 @@
       stepHold: "Hold L",
       stepChoose: "Choose with right stick",
       stepRelease: "Release to switch",
-      recentDemoDescription: "After the Compact Monitor expands into Recent 6, five task states are emphasized in turn. The center shows the current task’s token rate and local estimates.",
+      recentDemoDescription: "The Compact Monitor shows only the 68% Weekly remaining estimate. After it expands into Recent 6, five task states are emphasized in turn; the center shows 24.6 tok/s, Weekly 68%, and local estimates.",
       stateLegendLabel: "Task status legend",
       stateCycleDescription: "Statuses cycle automatically. Choose one to pause the cycle and emphasize its matching edge on the wheel.",
       recentReplayLabel: "Replay status demonstration",
@@ -547,8 +547,8 @@
   }
 
   function monitorMetrics(progress) {
-    var compact = CoHexNativeVisualSpec.monitor.compact;
-    var expanded = CoHexNativeVisualSpec.monitor.expanded;
+    var compact = CohexNativeVisualSpec.monitor.compact;
+    var expanded = CohexNativeVisualSpec.monitor.expanded;
     return {
       diameter: 500,
       outerRadius: interpolate(compact.outerRadius, expanded.outerRadius, progress),
@@ -625,7 +625,8 @@
 
     var centerCopy = document.createElement("div");
     centerCopy.className = "monitor-center-copy";
-    centerCopy.innerHTML = "<div class=\"monitor-rate\">24.6 <small>tok/s</small></div>"
+    centerCopy.innerHTML = "<strong class=\"monitor-compact-percent\">68%</strong>"
+      + "<div class=\"monitor-rate\">24.6 <small>tok/s</small></div>"
       + "<strong class=\"monitor-weekly\">Weekly 68%</strong>"
       + "<span class=\"monitor-estimate\">Est. Token · 1.24M</span>"
       + "<span class=\"monitor-hours\">Available · 42.50h</span>";
@@ -708,7 +709,7 @@
     var instance = this;
     var destination = clampUnit(target);
     var start = this.progress;
-    var animationDuration = reduceMotion.matches ? 0 : (duration || CoHexNativeVisualSpec.monitor.transitionDurationMS);
+    var animationDuration = reduceMotion.matches ? 0 : (duration || CohexNativeVisualSpec.monitor.transitionDurationMS);
     if (this.frameRequest !== null) window.cancelAnimationFrame(this.frameRequest);
     if (animationDuration === 0) {
       this.render(destination);
@@ -744,7 +745,7 @@
 
   function buildSkillWheel(mount) {
     if (!mount || mount.dataset.nativeSkillInitialized === "true") return;
-    var spec = CoHexNativeVisualSpec.skill;
+    var spec = CohexNativeVisualSpec.skill;
     var svg = createSVGElement("svg", { class: "native-skill-wheel", viewBox: "0 0 500 500" });
     var surface = createSVGElement("polygon", {
       class: "skill-surface",
@@ -972,7 +973,7 @@
     this.loopTimeout = window.setTimeout(function () {
       demo.renderStatus((demo.activeIndex + 1) % demo.buttons.length, true);
       demo.scheduleNext();
-    }, CoHexNativeVisualSpec.breathing.durationMS);
+    }, CohexNativeVisualSpec.breathing.durationMS);
   };
 
   RecentStatusDemo.prototype.startLoop = function (reset) {

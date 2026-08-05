@@ -433,12 +433,13 @@ img, svg { display: block; max-width: 100%; }
 }
 .monitor-rate { font-size: clamp(9px, 1.55vw, 16px); font-weight: 720; line-height: 1; letter-spacing: -.025em; white-space: nowrap; }
 .monitor-rate small { color: var(--text-secondary); font-size: .56em; font-weight: 690; }
+.monitor-compact-percent { display: none; font-size: clamp(9px, 2.4vw, 18px); font-weight: 720; line-height: 1; letter-spacing: -.025em; white-space: nowrap; }
 .monitor-weekly { font-size: clamp(14px, 2.5vw, 28px); line-height: 1; letter-spacing: -.045em; }
 .monitor-estimate,
 .monitor-hours { color: var(--text-secondary); font-size: clamp(7px, .9vw, 9px); font-weight: 650; line-height: 1.15; white-space: nowrap; }
 .native-monitor.is-compact .monitor-center-copy { width: 8.8%; height: 8.8%; padding: 0; }
-.native-monitor.is-compact .monitor-rate { font-size: clamp(9px, 2.4vw, 18px); }
-.native-monitor.is-compact .monitor-rate small,
+.native-monitor.is-compact .monitor-compact-percent { display: block; }
+.native-monitor.is-compact .monitor-rate,
 .native-monitor.is-compact .monitor-weekly,
 .native-monitor.is-compact .monitor-estimate,
 .native-monitor.is-compact .monitor-hours { display: none; }
