@@ -1,0 +1,26 @@
+COHEX PROPRIETARY BINARY LICENSE
+
+Copyright © 2026 Ran Wang. All Rights Reserved.
+
+CoHex is free proprietary software. Subject to this license, the
+copyright holder grants an end user a limited, non-exclusive, non-transferable,
+revocable right to install and use an official, unmodified binary release of
+CoHex on Apple Silicon Macs controlled by that end user.
+
+No source-code license is granted. Except where applicable law does not permit
+the restriction, the software may not be copied, redistributed, sold,
+sublicensed, modified, adapted, used to create derivative works, reverse
+engineered, decompiled, or disassembled without prior written permission from
+the copyright holder. An unmodified backup copy for the licensee's own use is
+permitted.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT
+PERMITTED BY LAW, THE COPYRIGHT HOLDER IS NOT LIABLE FOR ANY CLAIM, DAMAGES,
+OR OTHER LIABILITY ARISING FROM OR RELATED TO THE SOFTWARE OR ITS USE.
+
+CoHex is an independent project. OpenAI, Codex, Nintendo, Nintendo
+Switch, Work Louder, Codex Micro, Apple, macOS, and related names and marks are
+the property of their respective owners. No affiliation, sponsorship, or
+endorsement is implied.

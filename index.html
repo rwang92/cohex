@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Cohex 将任务状态、Token 用量与切换操作集成于一个悬浮六边形，让手柄与鼠标自然掌握 Codex Desktop 的 Recent 6。">
+  <meta property="og:title" content="Cohex — 六个 Task，一眼掌握。">
+  <meta property="og:description" content="任务状态、Token 用量与切换操作，集成于一个悬浮六边形。用手柄或鼠标自然掌握 Codex Desktop 的 Recent 6。">
+  <meta property="og:type" content="website">
+  <title>Cohex — 六个 Task，一眼掌握。</title>
+  <link rel="icon" type="image/png" href="assets/cohex-mark.png">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skipToContent">跳到主要内容</a>
+
+  <header class="site-header">
+    <nav class="glass-nav" aria-label="主导航" data-i18n-aria-label="navLabel">
+      <a class="brand-wordmark" href="#top" aria-label="Cohex 首页" data-i18n-aria-label="brandHome">
+        <span class="cohex-wordmark" aria-hidden="true">
+          <span class="cohex-wordmark-initial" data-wordmark-piece="C">C</span>
+          <span class="cohex-wordmark-mark" data-wordmark-piece="mark"><img class="brand-mark" src="assets/cohex-wordmark-mark.png" width="755" height="656" alt=""></span>
+          <span class="cohex-wordmark-tail" data-wordmark-piece="hex">hex</span>
+        </span>
+        <span class="beta-pill">0.9 Beta</span>
+      </a>
+      <div class="nav-links" aria-label="页面章节" data-i18n-aria-label="navSections">
+        <a href="#recent-six" data-i18n="navTasks">Recent 6</a>
+        <a href="#controls" data-i18n="navControls">操作</a>
+        <a href="#shortcuts" data-i18n="navMoreControls">快捷操作</a>
+        <a href="#compatibility" data-i18n="navCompatibility">兼容性</a>
+      </div>
+      <div class="nav-actions">
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to English">EN</button>
+        <a class="github-button" id="githubButton" aria-disabled="true" tabindex="-1">
+          <span data-i18n="githubLabel">View on GitHub</span>
+          <span class="coming-soon" data-i18n="comingSoon">即将开放</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero brand-hero" id="top" aria-labelledby="hero-title">
+      <div class="ambient ambient-blue" aria-hidden="true"></div>
+      <div class="ambient ambient-green" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span data-i18n="heroEyebrow">Cohex：为 Codex Desktop 而生的原生 macOS 控制器。</span></p>
+        <h1 class="hero-wordmark" id="hero-title" aria-label="Cohex">
+          <span class="cohex-wordmark hero-wordmark-visual" aria-hidden="true">
+            <span class="cohex-wordmark-initial" data-wordmark-piece="C">C</span>
+            <span class="cohex-wordmark-mark" data-wordmark-piece="mark"><img class="brand-mark" src="assets/cohex-wordmark-mark.png" width="755" height="656" alt=""></span>
+            <span class="cohex-wordmark-tail" data-wordmark-piece="hex">hex</span>
+          </span>
+        </h1>
+        <p class="hero-value"><span data-i18n="heroTitleLine1">六个 Task，</span><span class="gradient-text" data-i18n="heroTitleLine2">一眼掌握。</span></p>
+        <p class="hero-lede" data-i18n="heroBody">任务状态、Token 用量与切换操作，集成于一个悬浮六边形。用手柄保持工作节奏，也可以直接用鼠标查看与切换。</p>
+        <div class="hero-actions">
+          <a class="primary-cta" id="heroGithubButton" aria-disabled="true" tabindex="-1">
+            <span data-i18n="githubLabel">View on GitHub</span>
+            <span class="coming-soon" data-i18n="comingSoon">即将开放</span>
+          </a>
+          <a class="text-link" href="#recent-six"><span data-i18n="exploreFeatures">了解核心功能</span><span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero-brand-target" aria-hidden="true"></div>
+      <div class="hero-monitor-preload" data-monitor-mount="hero" hidden aria-hidden="true"></div>
+    </section>
+
+    <section class="feature-section monitor-section" id="recent-six" aria-labelledby="recent-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-number">01</p>
+          <p class="eyebrow" data-i18n="recentEyebrow">Recent 6 · Token Monitor</p>
+          <h2 id="recent-title"><span data-i18n="recentTitleLine1">状态在边上，</span><br><span data-i18n="recentTitleLine2">注意力留在任务上。</span></h2>
+        </div>
+        <div class="section-intro">
+          <p data-i18n="recentBody">六条边对应最近六个 Task。颜色先告诉你哪里正在运行、哪里需要回应；中央只呈现当前可见 Task 的生成节奏与额度概览。</p>
+          <p class="disclosure" data-i18n="tokenDisclosure">tok/s 仅统计当前可见 Task 的 output 与 reasoning output。Weekly、剩余 Token 与可用时长为本机校准估算，并非 OpenAI 提供的精确额度。</p>
+        </div>
+      </div>
+
+      <div class="demo-toolbar">
+        <span data-i18n="recentDemoLabel">从 Compact 到完整状态</span>
+        <button class="replay-button" type="button" data-replay="monitorDemo" aria-controls="monitorDemo" data-i18n-aria-label="recentReplayLabel"><span aria-hidden="true">↻</span><span data-i18n="replay">重播</span></button>
+      </div>
+      <div class="glass-stage monitor-stage" id="monitorDemo" data-once-animation>
+        <div class="native-monitor-mount native-monitor-overview" data-monitor-mount="recent" aria-hidden="true"></div>
+        <p class="sr-only" data-i18n="recentDemoDescription">Compact Monitor 展开为 Recent 6 后，五种状态依次突出。中央显示当前 Task 的 Token 生成速率和本机估算。</p>
+      </div>
+
+      <div class="state-legend" aria-label="Task 状态图例" data-i18n-aria-label="stateLegendLabel">
+        <p class="sr-only" data-i18n="stateCycleDescription">状态会自动循环。选择任一状态可暂停循环，并突出轮盘中对应的边。</p>
+        <button class="state-item" type="button" data-demo-status="active" data-demo-band-index="0" aria-controls="monitorDemo" aria-pressed="true"><span class="state-swatch active" aria-hidden="true">↻</span><span><strong data-i18n="stateActive">活跃</strong><small>Active</small></span><span class="state-selected-mark" aria-hidden="true">●</span></button>
+        <button class="state-item" type="button" data-demo-status="unread" data-demo-band-index="2" aria-controls="monitorDemo" aria-pressed="false"><span class="state-swatch unread" aria-hidden="true">✓</span><span><strong data-i18n="stateUnread">完成未读</strong><small>Unread</small></span><span class="state-selected-mark" aria-hidden="true">●</span></button>
+        <button class="state-item" type="button" data-demo-status="viewed" data-demo-band-index="3" aria-controls="monitorDemo" aria-pressed="false"><span class="state-swatch viewed" aria-hidden="true">✓</span><span><strong data-i18n="stateViewed">完成已读</strong><small>Viewed</small></span><span class="state-selected-mark" aria-hidden="true">●</span></button>
+        <button class="state-item" type="button" data-demo-status="needs" data-demo-band-index="1" aria-controls="monitorDemo" aria-pressed="false"><span class="state-swatch needs" aria-hidden="true">!</span><span><strong data-i18n="stateNeeds">等待输入</strong><small>Needs input</small></span><span class="state-selected-mark" aria-hidden="true">●</span></button>
+        <button class="state-item" type="button" data-demo-status="error" data-demo-band-index="4" aria-controls="monitorDemo" aria-pressed="false"><span class="state-swatch error" aria-hidden="true">×</span><span><strong data-i18n="stateError">错误</strong><small>Error</small></span><span class="state-selected-mark" aria-hidden="true">●</span></button>
+      </div>
+    </section>
+
+    <section class="feature-section controls-section" id="controls" aria-labelledby="controls-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-number">02</p>
+          <p class="eyebrow" data-i18n="controllerEyebrow">Controller &amp; Pointer</p>
+          <h2 id="controls-title"><span data-i18n="controllerTitleLine1">一个六边形，</span><br><span data-i18n="controllerTitleLine2">两种自然的控制方式。</span></h2>
+        </div>
+        <p class="section-intro" data-i18n="controllerBody">按住 L，用右摇杆选中 Task，松开立即切换。手离开手柄时，也可以拖动 Monitor、展开 Recent 6 并直接点击任务。</p>
+      </div>
+
+      <div class="demo-toolbar">
+        <div class="mode-labels" role="group" aria-label="操作方式" data-i18n-aria-label="controlModeLabel">
+          <button class="mode-label is-active" type="button" data-control-mode="controller" aria-controls="taskSwitchDemo" aria-pressed="true" data-i18n="controllerMethodTitle">用手柄保持工作节奏</button>
+          <button class="mode-label" type="button" data-control-mode="pointer" aria-controls="taskSwitchDemo" aria-pressed="false" data-i18n="pointerTitle">手离开手柄，也一样自然。</button>
+        </div>
+        <button class="replay-button" type="button" data-replay="taskSwitchDemo" aria-controls="taskSwitchDemo" data-i18n-aria-label="controlsReplayLabel"><span aria-hidden="true">↻</span><span data-i18n="replay">重播</span></button>
+      </div>
+      <div class="glass-stage task-switch-panel" id="taskSwitchDemo" data-once-animation data-controller-scene="task-switch" data-controller-step="l" data-input-mode="controller">
+        <div class="task-input-stage">
+          <div class="controller-template-mount" data-controller-mount></div>
+          <div class="pointer-visual" aria-hidden="true">
+            <div class="trackpad-outline"><span class="pressure-ring pressure-ring-outer"></span><span class="pressure-ring pressure-ring-inner"></span></div>
+          </div>
+          <ol class="compact-flow controller-flow">
+            <li><strong data-i18n="flowHoldTitle">按住 L</strong><span data-i18n="flowHoldBody">从 Compact Monitor 展开 Recent 6。</span></li>
+            <li><strong data-i18n="flowChooseTitle">推动右摇杆</strong><span data-i18n="flowChooseBody">颜色与 Task 名称同步高亮。</span></li>
+            <li><strong data-i18n="flowReleaseTitle">松开 L</strong><span data-i18n="flowReleaseBody">精确切换到对应 Task；B 随时取消。</span></li>
+          </ol>
+          <ol class="compact-flow pointer-flow">
+            <li><strong data-i18n="pointerFlowMoveTitle">拖动</strong><span data-i18n="pointerFlowMoveBody">把 Compact Monitor 放在顺手的位置。</span></li>
+            <li><strong data-i18n="pointerFlowExpandTitle">展开</strong><span data-i18n="pointerFlowExpandBody">Force Touch 或右键打开 Recent 6。</span></li>
+            <li><strong data-i18n="pointerFlowChooseTitle">点击 Task</strong><span data-i18n="pointerFlowChooseBody">切换任务；点击中央即可收起。</span></li>
+          </ol>
+        </div>
+        <div class="task-output-stage">
+          <div class="native-monitor-mount" data-monitor-mount="task-switch" aria-hidden="true"></div>
+          <div class="result-pill"><span class="result-dot" aria-hidden="true"></span><span class="controller-result-copy" data-i18n="controllerResult">切换到「完善首页」</span><span class="pointer-result-copy" data-i18n="pointerResult">Recent 6 已展开</span></div>
+          <p class="pointer-note" data-i18n="pointerBody">Cohex 的悬浮 Monitor 不抢走 Codex 输入焦点。拖动它改变位置；Force Touch 或右键展开；点击 Task 切换，点击中央收起。</p>
+        </div>
+        <p class="sr-only" data-i18n="controllerDemoDescription">一次播放的动画展示 Nintendo Switch Pro Controller：L 键发光，Recent 6 展开，右摇杆选择任务，松开后完成切换。</p>
+      </div>
+      <p class="boundary-note" data-i18n="pointerBoundary">鼠标只直接操作 Token Monitor 与 Recent 6。Cohex 不会把手柄摇杆伪装成 macOS 系统光标。</p>
+    </section>
+
+    <section class="feature-section shortcuts-section" id="shortcuts" aria-labelledby="shortcuts-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-number">03</p>
+          <p class="eyebrow" data-i18n="shortcutsEyebrow">More controls</p>
+          <h2 id="shortcuts-title" data-i18n="shortcutsTitle">常用操作，都在熟悉的位置。</h2>
+        </div>
+        <p class="section-intro" data-i18n="shortcutsBody">同一只 Switch Pro Controller 继续处理 Skill、模型与问题、听写、确认和 Plan 文档。每一步都有清晰、单一的物理入口。</p>
+      </div>
+
+      <div class="demo-toolbar">
+        <span data-i18n="shortcutsDemoLabel">五项核心操作</span>
+        <button class="replay-button" type="button" data-replay="shortcutDemo" aria-controls="shortcutDemo" data-i18n-aria-label="shortcutsReplayLabel"><span aria-hidden="true">↻</span><span data-i18n="replay">重播</span></button>
+      </div>
+      <div class="glass-stage shortcut-panel" id="shortcutDemo" data-once-animation data-controller-scene="shortcuts" data-controller-step="zl">
+        <div class="control-tabs" role="tablist" aria-label="五项核心操作" data-i18n-aria-label="mappingLabel">
+          <button class="control-tab is-active" id="shortcut-tab-zl" type="button" role="tab" data-control-tab="zl" aria-selected="true" aria-controls="shortcut-effect-zl" tabindex="0"><b>ZL</b><span data-i18n="mappingSkills">Skill Wheel</span></button>
+          <button class="control-tab" id="shortcut-tab-dpad" type="button" role="tab" data-control-tab="dpad" aria-selected="false" aria-controls="shortcut-effect-dpad" tabindex="-1"><b>D-pad</b><span data-i18n="mappingDpad">模型与问题</span></button>
+          <button class="control-tab" id="shortcut-tab-zr" type="button" role="tab" data-control-tab="zr" aria-selected="false" aria-controls="shortcut-effect-zr" tabindex="-1"><b>ZR</b><span data-i18n="mappingDictation">听写</span></button>
+          <button class="control-tab" id="shortcut-tab-ab" type="button" role="tab" data-control-tab="ab" aria-selected="false" aria-controls="shortcut-effect-ab" tabindex="-1"><b>A/B</b><span data-i18n="mappingConfirm">确认与返回</span></button>
+          <button class="control-tab" id="shortcut-tab-y" type="button" role="tab" data-control-tab="y" aria-selected="false" aria-controls="shortcut-effect-y" tabindex="-1"><b>Y</b><span data-i18n="mappingPlan">Plan 文档</span></button>
+        </div>
+
+        <div class="shortcut-body">
+          <div class="shortcut-controller" data-controller-mount></div>
+          <div class="effect-stage">
+            <section class="control-effect is-active" id="shortcut-effect-zl" role="tabpanel" aria-labelledby="shortcut-tab-zl" aria-hidden="false" data-control-effect="zl">
+              <div class="effect-title"><b>ZL</b><span data-i18n="mappingSkillsNote">收藏 Skill</span></div>
+              <div class="native-skill-mount" data-skill-mount></div>
+            </section>
+            <section class="control-effect" id="shortcut-effect-dpad" role="tabpanel" aria-labelledby="shortcut-tab-dpad" aria-hidden="true" inert data-control-effect="dpad">
+              <div class="effect-title"><b>D-pad</b><span data-i18n="mappingDpadNote">Model · Reasoning · Native question</span></div>
+              <div class="native-model-mount" data-model-effect data-model-mount></div>
+            </section>
+            <section class="control-effect" id="shortcut-effect-zr" role="tabpanel" aria-labelledby="shortcut-tab-zr" aria-hidden="true" inert data-control-effect="zr">
+              <div class="effect-title"><b>ZR</b><span data-i18n="mappingDictationNote">按住说话</span></div>
+              <div class="dictation-effect" data-zr-preview>
+                <div class="dictation-hud">
+                  <span class="dictation-accent" aria-hidden="true"></span>
+                  <span class="dictation-waveform" data-zr-waveform aria-hidden="true">
+                    <i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i><i class="waveform-bar" data-waveform-bar></i>
+                  </span>
+                  <span class="dictation-copy"><strong data-i18n="dictationStatus">正在听写</strong><small data-i18n="dictationRelease">松开 ZR 完成</small></span>
+                </div>
+              </div>
+            </section>
+            <section class="control-effect" id="shortcut-effect-ab" role="tabpanel" aria-labelledby="shortcut-tab-ab" aria-hidden="true" inert data-control-effect="ab">
+              <div class="effect-title"><b>A/B</b><span data-i18n="mappingConfirmNote">原生上下文</span></div>
+              <div class="permission-preview" data-grant-access-preview>
+                <div class="permission-card" role="group" aria-label="权限请求" data-i18n-aria-label="permissionTitle">
+                  <div class="permission-app-row" data-permission-source>
+                    <span class="terminal-symbol" aria-hidden="true"></span>
+                    <strong data-i18n="permissionSource">Terminal</strong>
+                  </div>
+                  <div class="permission-question"><strong data-i18n="permissionQuestion">是否允许执行一次无文件改动的权限测试，并打开 macOS Calculator？</strong></div>
+                  <code class="permission-command" data-permission-command>/usr/bin/open -a Calculator</code>
+                  <div class="permission-footer">
+                    <p class="permission-demo-note" data-i18n="permissionDemoNote">体验演示 · 不会执行命令或请求系统权限</p>
+                    <div class="grant-choices" data-permission-actions aria-label="B 拒绝，A 允许一次" data-i18n-aria-label="permissionActionsLabel">
+                      <span class="grant-choice grant-choice-back" data-grant-choice="back"><b aria-hidden="true">B</b><span data-i18n="permissionBack">拒绝</span></span>
+                      <span class="grant-choice grant-choice-primary" data-grant-choice="grant"><b aria-hidden="true">A</b><span data-i18n="permissionGrant">允许一次</span><i class="grant-chevron" data-permission-chevron aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="control-effect" id="shortcut-effect-y" role="tabpanel" aria-labelledby="shortcut-tab-y" aria-hidden="true" inert data-control-effect="y">
+              <div class="effect-title"><b>Y</b><span data-i18n="mappingPlanNote">打开或关闭</span></div>
+              <div class="plan-effect" data-plan-preview>
+                <div class="plan-window">
+                  <div class="plan-conversation">
+                    <span class="plan-mode-pill" data-plan-mode data-i18n="planModeLabel">Plan mode</span>
+                    <div class="plan-prompt"><small data-i18n="planPromptLabel">当前 Task</small><strong data-i18n="planPrompt">为控制器演示制定一份 Plan</strong></div>
+                    <span class="plan-open-action" data-i18n="planOpenAction">在侧边面板中打开 Plan</span>
+                  </div>
+                  <aside class="plan-side-panel" data-plan-panel>
+                    <header><strong>Plan</strong><span class="plan-close" aria-hidden="true">×</span></header>
+                    <div class="plan-document-content" data-plan-document>
+                      <small data-i18n="planDocumentEyebrow">PLAN</small>
+                      <strong data-i18n="planDocumentTitle">Implementation plan</strong>
+                      <ol>
+                        <li data-plan-step><span aria-hidden="true">✓</span><span data-i18n="planStepOne">确认当前交互</span></li>
+                        <li data-plan-step><span aria-hidden="true">○</span><span data-i18n="planStepTwo">实现控制映射</span></li>
+                        <li data-plan-step><span aria-hidden="true">○</span><span data-i18n="planStepThree">验证状态反馈</span></li>
+                      </ol>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <p class="sr-only" data-i18n="shortcutsDemoDescription">演示会自动循环 ZL、D-pad、ZR、A 与 B、Y。选择任一操作可暂停并保持对应画面。</p>
+      </div>
+    </section>
+
+    <section class="compatibility-section" id="compatibility" aria-labelledby="compatibility-title">
+      <div class="compatibility-copy">
+        <h2 class="eyebrow" id="compatibility-title" data-i18n="compatibilityEyebrow">Compatibility</h2>
+      </div>
+      <div class="compatibility-grid">
+        <article><span aria-hidden="true">M</span><strong data-i18n="compatAppleSiliconTitle">Apple Silicon</strong><p data-i18n="compatAppleSilicon">arm64 原生构建</p></article>
+        <article><span aria-hidden="true">14+</span><strong data-i18n="compatMacOSTitle">macOS 14+</strong><p data-i18n="compatMacOS">支持浅色、深色与辅助功能设置</p></article>
+        <article><span aria-hidden="true">⌘</span><strong data-i18n="compatCodexTitle">Codex Desktop</strong><p data-i18n="compatCodex">面向当前桌面 Task 工作流</p></article>
+        <article><span aria-hidden="true">◖◗</span><strong data-i18n="compatControllerTitle">Nintendo Switch Pro</strong><p data-i18n="compatController">USB 与 Bluetooth</p></article>
+        <article><span aria-hidden="true">A11Y</span><strong data-i18n="compatAccessibilityTitle">Accessibility</strong><p data-i18n="compatAccessibility">部分语义操作需要 macOS 授权</p></article>
+        <article><span aria-hidden="true">⌁</span><strong data-i18n="compatLocalTitle">Local by design</strong><p data-i18n="compatLocal">无开发者运营的后端或分析 SDK</p></article>
+      </div>
+    </section>
+
+    <section class="brand-story-section" aria-labelledby="brand-story-title">
+      <div class="brand-story-mark" aria-hidden="true">
+        <img src="assets/cohex-mark.png" width="800" height="720" alt="">
+      </div>
+      <div class="brand-story-copy">
+        <p class="eyebrow" data-i18n="brandStoryEyebrow">为什么叫 Cohex</p>
+        <h2 id="brand-story-title" data-i18n="brandStoryTitle">从 Codex，到六边形。</h2>
+        <p data-i18n="brandStoryBody1">Cohex 由 Codex 与 Hex 融合而来。Co 保留它与 Codex 的连接，Hex 指向产品的六边形界面，也对应 Recent 6 的六个 Task。</p>
+        <p data-i18n="brandStoryBody2">标记以苯环的六边结构为灵感：六条边承载任务状态，中央圆代表当前聚焦的 Task。名字、图标与交互，因此共享同一种几何语言。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <span class="brand-wordmark" aria-label="Cohex">
+        <span class="cohex-wordmark" aria-hidden="true">
+          <span class="cohex-wordmark-initial" data-wordmark-piece="C">C</span>
+          <span class="cohex-wordmark-mark" data-wordmark-piece="mark"><img class="brand-mark" src="assets/cohex-wordmark-mark.png" width="755" height="656" alt=""></span>
+          <span class="cohex-wordmark-tail" data-wordmark-piece="hex">hex</span>
+        </span>
+      </span>
+      <p data-i18n="footerTagline">六个 Task，一眼掌握。</p>
+    </div>
+    <div class="footer-disclosures"><p data-i18n="independenceDisclosure">Cohex 是独立项目，与 OpenAI、Apple、Nintendo 或 Work Louder 无隶属、赞助或背书关系。所有产品名称与商标归其各自所有者。</p><p data-i18n="privacyDisclosure">页面动画使用匿名固定示例，不读取本机 Task、Token 或任何个人数据。</p></div>
+  </footer>
+
+  <template id="switchProControllerTemplate">
+    <div class="controller-product" aria-hidden="true">
+      <img class="controller-product-image" src="assets/cohex-controller.png" width="1536" height="1024" alt="">
+      <svg class="controller-hotspots" data-controller-hotspot viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet">
+        <g class="controller-control control-zl" data-control-highlight="zl"><path class="hotspot shoulder" d="M294 146C327 120 410 111 464 119C476 121 481 129 480 144L476 161C421 153 348 163 281 191L282 174C284 161 288 152 294 146Z"></path><text x="382" y="151">ZL</text></g>
+        <g class="controller-control control-zr" data-control-highlight="zr"><path class="hotspot shoulder" d="M1242 146C1209 120 1126 111 1072 119C1060 121 1055 129 1056 144L1060 161C1115 153 1188 163 1255 191L1254 174C1252 161 1248 152 1242 146Z"></path><text x="1154" y="151">ZR</text></g>
+        <g class="controller-control control-l" data-control-highlight="l"><path class="hotspot shoulder lower" d="M284 181C340 153 420 146 479 157L480 220C414 219 344 230 291 254C278 235 276 205 284 181Z"></path><text x="381" y="207">L</text></g>
+        <g class="controller-control control-r" data-control-highlight="r"><path class="hotspot shoulder lower" d="M1252 181C1196 153 1116 146 1057 157L1056 220C1122 219 1192 230 1245 254C1258 235 1260 205 1252 181Z"></path><text x="1155" y="207">R</text></g>
+        <g class="controller-control control-dpad" data-control-highlight="dpad"><path class="hotspot dpad" d="M510 486H584Q590 486 590 493V549H642Q649 549 649 556V625Q649 632 642 632H590V686Q590 693 583 693H510Q503 693 503 686V632H450Q443 632 443 625V556Q443 549 450 549H503V493Q503 486 510 486Z"></path></g>
+        <g class="controller-control control-right-stick" data-control-highlight="right-stick"><circle class="hotspot stick" cx="985" cy="590" r="92"></circle><g class="stick-motion-cues" data-stick-direction transform="rotate(-30 985 590)"><path class="stick-motion-arc stick-motion-arc-inner" d="M1097 554 A118 118 0 0 1 1097 626"></path><path class="stick-motion-arc stick-motion-arc-outer" d="M1117 547 A139 139 0 0 1 1117 633"></path></g></g>
+        <g class="controller-control control-a" data-control-highlight="a"><circle class="hotspot button" cx="1224" cy="394" r="50"></circle><text x="1224" y="410">A</text></g>
+        <g class="controller-control control-b" data-control-highlight="b"><circle class="hotspot button" cx="1136" cy="482" r="50"></circle><text x="1136" y="498">B</text></g>
+        <g class="controller-control control-y" data-control-highlight="y"><circle class="hotspot button" cx="1047" cy="394" r="50"></circle><text x="1047" y="410">Y</text></g>
+        <g class="controller-control control-x" data-control-highlight="x"><circle class="hotspot button" cx="1136" cy="306" r="50"></circle><text x="1136" y="322">X</text></g>
+      </svg>
+    </div>
+  </template>
+</body>
+</html>
