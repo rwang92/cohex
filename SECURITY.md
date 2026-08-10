@@ -2,7 +2,7 @@
 
 ## Supported releases
 
-CoHex is currently a `0.9` beta. Security fixes are provided only for the newest published beta unless a release note explicitly says otherwise. Version `0.9` has no automatic updater; users must install a newer DMG manually.
+Cohex is currently a `0.9` beta. Security fixes are provided only for the newest published beta unless a release note explicitly says otherwise. Version `0.9` has no automatic updater; users must install a newer DMG manually.
 
 ## Reporting a vulnerability
 
@@ -12,7 +12,7 @@ Do not publish credentials, conversation data, private task information, proof-o
 
 Include:
 
-- CoHex version and build;
+- Cohex version and build;
 - macOS version and Apple Silicon model;
 - Codex Desktop version;
 - whether Accessibility and any default-off experimental feature were enabled;
@@ -23,22 +23,22 @@ Include:
 Download only the versioned DMG and its matching `.sha256` sidecar from the official GitHub Release. From the download directory:
 
 ```sh
-shasum -a 256 -c 'CoHex-0.9.0-arm64.dmg.sha256'
-codesign --verify --strict --verbose=2 'CoHex-0.9.0-arm64.dmg'
+shasum -a 256 -c 'Cohex-0.9.2-arm64.dmg.sha256'
+codesign --verify --strict --verbose=2 'Cohex-0.9.2-arm64.dmg'
 spctl --assess --type open --context context:primary-signature --verbose=2 \
-  'CoHex-0.9.0-arm64.dmg'
-xcrun stapler validate 'CoHex-0.9.0-arm64.dmg'
+  'Cohex-0.9.2-arm64.dmg'
+xcrun stapler validate 'Cohex-0.9.2-arm64.dmg'
 ```
 
 After copying the app to `/Applications`:
 
 ```sh
 codesign --verify --deep --strict --verbose=2 \
-  '/Applications/CoHex.app'
+  '/Applications/Cohex.app'
 spctl --assess --type execute --verbose=2 \
-  '/Applications/CoHex.app'
+  '/Applications/Cohex.app'
 codesign --display --requirements - \
-  '/Applications/CoHex.app'
+  '/Applications/Cohex.app'
 ```
 
 A production release must be signed by an Apple-issued `Developer ID Application` identity, use Hardened Runtime and a secure timestamp, and have a stapled Apple notarization ticket. Do not use `xattr` or disable Gatekeeper to launch a copy that fails these checks.
@@ -46,12 +46,12 @@ A production release must be signed by an Apple-issued `Developer ID Application
 ## Security model
 
 - The production app is an arm64-only, sandbox-free menu bar utility because PID-scoped key events, Accessibility, controller input, local Codex metadata, and optional local HID output are core functions.
-- Accessibility is a broad macOS permission. CoHex limits its implementation to bounded searches in verified Codex windows and value/action semantics needed by mapped features, but users should grant it only to an authentic release.
+- Accessibility is a broad macOS permission. Cohex limits its implementation to bounded searches in verified Codex windows and value/action semantics needed by mapped features, but users should grant it only to an authentic release.
 - Documented shortcuts and deep links are preferred over Accessibility.
 - Local Codex databases, global state, model catalog, shortcut configuration, and rollout metadata are opened read-only.
 - The default path has no developer-operated remote service, analytics upload, automatic updater, privileged helper, login item, or user-provided command execution.
 - Shared-daemon control and physical-Micro lighting are isolated, default-off experiments. Compatibility failure is fail-closed.
-- CoHex does not modify Codex's ASAR or use private Electron IPC.
+- Cohex does not modify Codex's ASAR or use private Electron IPC.
 
 ## Release integrity
 

@@ -1,6 +1,6 @@
-# CoHex
+# Cohex
 
-CoHex is a free proprietary macOS menu-bar utility that maps a
+Cohex is a free proprietary macOS menu-bar utility that maps a
 genuine Nintendo Switch Pro Controller to Codex Desktop.
 
 ## Download — Coming soon
@@ -11,8 +11,8 @@ downloadable build.
 When a release is available, **GitHub Releases** in this repository will be the
 only official binary source. Download both:
 
-- `CoHex-<version>-arm64.dmg`
-- `CoHex-<version>-arm64.dmg.sha256`
+- `Cohex-<version>-arm64.dmg`
+- `Cohex-<version>-arm64.dmg.sha256`
 
 The supported target is:
 
@@ -29,13 +29,13 @@ verify the checksum and Apple signature before installation.
 
 1. Verify the downloaded DMG and checksum.
 2. Open the DMG.
-3. Drag **CoHex** to **Applications**.
+3. Drag **Cohex** to **Applications**.
 4. Launch it from `/Applications`.
 5. Grant Accessibility only to that installed copy when macOS requests it.
 
-CoHex uses a new macOS identity (`com.ranwang.CoHex`). Users migrating from the
+Cohex uses a new macOS identity (`com.ranwang.Cohex`). Users migrating from the
 legacy Codex Controller app must grant Accessibility again. Quit the legacy app
-before launching CoHex; the installer does not delete it automatically.
+before launching Cohex; the installer does not delete it automatically.
 
 See [SUPPORT.md](SUPPORT.md) for setup and troubleshooting.
 

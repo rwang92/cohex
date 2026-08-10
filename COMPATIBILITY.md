@@ -25,7 +25,7 @@ Those devices or environments may expose similar inputs, but they are not part o
 
 ## Codex version sensitivity
 
-CoHex routes actions in descending stability:
+Cohex routes actions in descending stability:
 
 1. the user's actual Codex keyboard binding, including an explicit disabled (`null`) binding;
 2. documented Codex keyboard defaults and stable Desktop defaults, used across Codex builds;
@@ -35,7 +35,7 @@ CoHex routes actions in descending stability:
 
 Codex's Chromium Accessibility tree can change between releases. Shortcut-backed navigation and simple Return/Escape dispatch are generally less sensitive than model/Reasoning verification, structured choices, the Plan-document open action, manually mapped Stop, user-message navigation, R3 latest-position navigation, guarded Backspace, Usage discovery, and Skill insertion.
 
-CoHex does not re-gate documented or stable Desktop shortcut defaults after a Codex version change. It still fails closed when a configured-only command lacks a binding or when a destructive/context-sensitive Accessibility result cannot be uniquely verified. A new Codex build can therefore make a semantic Accessibility feature temporarily unavailable without disabling stable shortcut-backed features.
+Cohex does not re-gate documented or stable Desktop shortcut defaults after a Codex version change. It still fails closed when a configured-only command lacks a binding or when a destructive/context-sensitive Accessibility result cannot be uniquely verified. A new Codex build can therefore make a semantic Accessibility feature temporarily unavailable without disabling stable shortcut-backed features.
 
 ## Permission matrix
 
@@ -55,13 +55,13 @@ CoHex does not re-gate documented or stable Desktop shortcut defaults after a Co
 | Guarded composer Backspace | Yes |
 | Manually mapped Usage discovery | Yes |
 
-CoHex does not request microphone permission. Codex Desktop owns dictation and microphone access. Controller suppresses B while ZR owns a dictation session; it does not capture or restore composer text.
+Cohex does not request microphone permission. Codex Desktop owns dictation and microphone access. Cohex suppresses B while ZR owns a dictation session; it does not capture or restore composer text.
 
 ## USB, Bluetooth, and haptics
 
 USB and Bluetooth are both product targets. Report timing, optional stick-click exposure, and haptic availability are controlled partly by macOS and the controller firmware.
 
-GameController is the primary input path. If a genuine Nintendo Pro Controller omits L3/R3 from both GameController button surfaces, CoHex uses a narrow, non-seizing HID fallback for the standard stick-button usages only. Haptics are used only when macOS exposes `GCController.haptics`; the app does not send Nintendo's private HD Rumble protocol.
+GameController is the primary input path. If a genuine Nintendo Pro Controller omits L3/R3 from both GameController button surfaces, Cohex uses a narrow, non-seizing HID fallback for the standard stick-button usages only. Haptics are used only when macOS exposes `GCController.haptics`; the app does not send Nintendo's private HD Rumble protocol.
 
 Automated tests cannot prove physical latency, Bluetooth ordering, haptic feel, or every button on every Mac. These remain release smoke-test requirements.
 

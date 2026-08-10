@@ -1,45 +1,64 @@
 # Changelog
 
-All notable public changes to CoHex are documented here.
+All notable public changes to Cohex are documented here.
 
-## [0.9.0-beta] - Unreleased
+## [0.9.2] - 2026-08-10
 
 ### Added
 
-- Native macOS menu bar controller mapping for a Nintendo Switch Pro Controller.
-- Shortcut-first Codex navigation, approval, rejection, Plan Mode, dictation, and command routing.
-- D-pad model × Reasoning and structured permission/question selectors.
-- Recent 6 task-state monitor, live local token-rate projection, Weekly details, and task switching.
-- Recent 6 now matches the Skill Wheel's semantic selection path: same-slot stick samples are free, selection is a light state-colored whole-sector fill, and the Task cursor/title Capsule are removed.
-- Recent 6 freezes each slot UUID and label synchronously before presentation, so a concurrent catalog refresh cannot redirect a selected sector; status and unread evidence for the same Task remain live.
-- Native Token Monitor drag sessions retain their originating Compact or Expanded panel even if L changes presentation mid-drag.
-- ZL Skill wheel with configurable favorites.
-- Single-click Y opens and closes the current Task's exact Plan side panel through one bounded, exact Accessibility action in each direction.
-- Guarded Stop, Backspace, task navigation, latest-position navigation, and semantic fallbacks.
-- Mapping import/export, task-state palette, HUD, and native haptic settings.
-- Apple Silicon release pipeline for Developer ID signing, Hardened Runtime, notarized/stapled DMG packaging, Gatekeeper verification, and SHA-256 sidecars.
-- Tag-triggered Draft Releases in a separate public binary repository, including
-  post-upload download and repeat verification of the exact public assets.
-- A source-safe public distribution repository exporter with public support,
-  privacy, security, compatibility, license, and redacted bug-report templates.
-- English and Simplified Chinese interface catalogs, with release-time checks
-  that reject missing, empty, duplicated, or unbundled translations.
+- Added an optional beta pointer-hold gesture that opens Recent 6 near the
+  pointer, then returns the compact monitor to its saved position after a Task
+  selection or center dismissal. It is event-driven and disabled by default.
+- Added a compact Token Clock choice between the current Task's estimated
+  generation rate and the remaining Standard Weekly percentage.
+- Added visual Switch Pro Controller mapping inspectors for General, Hold L,
+  and Hold ZL settings while preserving the existing mapping behavior.
 
 ### Changed
 
-- Increased the L short-tap/Recent-6 hold boundary from 80ms to 120ms, retaining
-  immediate wheel presentation for explicit right-stick selection intent.
-- Removed the experimental dictation draft-discard path. ZR retains its low-latency native dictation hold, while B is safely ignored until ZR is released.
-- Replaced the default Y long-hold Stop gesture with the Plan-document toggle; imported custom Y-hold mappings remain compatible.
+- Recent 6 now reserves its bounded candidate pool for all reliably active
+  Tasks before filling remaining slots by recency, without changing a frozen
+  wheel session's Task identities.
+- Token telemetry now shares one incremental rollout event hub, preserves a
+  valid same-Task rate baseline across turns, and uses bounded historical
+  calibration to improve the startup remaining-token and usable-hours
+  estimates without adding steady-state polling.
+- The runtime now quiesces input sessions, rollout work, Accessibility probes,
+  animations, discovery, and device retries for system sleep, then restores one
+  ordered generation after wake while retaining the last monitor snapshot.
+- Accessibility and quota work use adaptive, single-flight scheduling so idle,
+  background, low-power, and thermal-constrained operation performs less work
+  without reducing active controller responsiveness.
+- Native Codex question cards now own D-pad, A, and B through balanced native
+  Arrow, Return, and Escape events; permission and approval surfaces continue
+  to require exact bounded Accessibility actions.
+- The public application, executable, module, bundle, resources, and release
+  artifacts now consistently use the `Cohex` product identity.
+
+### Fixed
+
+- Fixed active generation sometimes remaining at `0.0 tok/s` after a turn or
+  wake by reconnecting the live projection without replaying historical output
+  or creating counter spikes.
+- Fixed current active Tasks being omitted from Recent 6 when newer idle rows
+  filled the local recency window.
+- Fixed resolved question or permission surfaces leaking yellow Needs Input
+  state across Task switches; structured request and approval lifecycles now
+  remain bound to their originating Task and generation.
+- Fixed viewed completed Tasks becoming unread again when stale local evidence
+  arrived without a newer turn.
+- Fixed transient Task-wheel placement, click capture, hover selection, edge
+  geometry, and restoration paths that could otherwise require relaunching the
+  app.
 
 ### Privacy and security
 
-- Local-first processing with no developer analytics or remote backend.
-- Read-only Codex local metadata/rollout integration.
-- Stable production bundle identifier and designated-requirement checks for Accessibility continuity.
-- Release cleanup preserves failing exit codes, and a published GitHub Release
-  can never be silently overwritten by a workflow rerun.
-- Shared-daemon direct control and physical Codex Micro lighting remain default-off experiments.
+- Cohex remains local-first, with no developer analytics or remote backend.
+- Token and activity readers consume bounded, read-only local metadata and do
+  not persist Task identity, quota values, or estimates.
+- The release pipeline requires Developer ID signing, Hardened Runtime, secure
+  timestamps, notarization, stapling, Gatekeeper verification, and a portable
+  SHA-256 sidecar.
 
 ### Supported target
 
@@ -51,7 +70,12 @@ All notable public changes to CoHex are documented here.
 ### Known limitations
 
 - This is a beta; Codex Accessibility semantics can change with Codex updates.
+- The optional pointer-hold gesture may conflict with an underlying app's own
+  Force Touch behavior and is intended for blank, non-conflicting areas.
 - Intel Macs and other controller families are not supported.
 - macOS may not expose Nintendo Pro Controller haptics.
-- Physical USB/Bluetooth latency, every button, optional Micro output, and experimental shared-daemon mutation require release-specific hardware smoke tests.
-- Version 0.9 has no automatic updater. Updates are installed manually from GitHub Releases.
+- Physical USB/Bluetooth latency, every button, optional Micro output, and
+  experimental shared-daemon mutation require release-specific hardware smoke
+  tests.
+- Version 0.9 has no automatic updater. Updates are installed manually from
+  GitHub Releases.

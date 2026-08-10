@@ -330,7 +330,7 @@
     }
   };
 
-  var storageKey = "cohex-site-language";
+  var storageKey = "product-site-language";
   var activeLanguage = "en";
   var languageToggle = document.getElementById("languageToggle");
   var metadataDescription = document.querySelector('meta[name="description"]');
@@ -562,7 +562,7 @@
     if (activeLanguage === "en") {
       return [
         ["Fix build", "Cohex"],
-        ["Polish landing", "cohex-site"],
+        ["Polish landing", "landing-site"],
         ["Verify install", "Cohex"],
         ["Organize docs", "docs"],
         ["Debug sync", "controller-core"],
@@ -571,7 +571,7 @@
     }
     return [
       ["修复构建", "Cohex"],
-      ["完善首页", "cohex-site"],
+      ["完善首页", "landing-site"],
       ["验证安装", "Cohex"],
       ["整理文档", "docs"],
       ["排查同步", "controller-core"],
