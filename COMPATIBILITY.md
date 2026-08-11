@@ -13,6 +13,18 @@
 
 The app is a beta. A supported target means the implementation and release process are designed for that combination; it does not replace the release smoke-test matrix. Published release notes must say which macOS versions and USB/Bluetooth paths were physically tested.
 
+## Last tested
+
+| Cohex release | Release date | Codex Desktop build | Verified scope |
+|---|---|---|---|
+| `0.9.2 (2)` | 2026-08-10 | `26.803.61601` | X/Plan routing after assigning a real **Toggle plan mode** shortcut in Codex |
+| `0.9.2 (2)` | 2026-08-10 | `26.803.81509` | X/Plan routing after assigning a real **Toggle plan mode** shortcut in Codex |
+
+These entries identify builds used for focused compatibility checks. They are
+not a hard-coded Codex support range and do not imply that the full
+USB/Bluetooth, clean-account, permission, or every-button matrix was
+independently completed on each build.
+
 ## Not supported
 
 - Intel Macs
@@ -36,6 +48,11 @@ Cohex routes actions in descending stability:
 Codex's Chromium Accessibility tree can change between releases. Shortcut-backed navigation and simple Return/Escape dispatch are generally less sensitive than model/Reasoning verification, structured choices, the Plan-document open action, manually mapped Stop, user-message navigation, R3 latest-position navigation, guarded Backspace, Usage discovery, and Skill insertion.
 
 Cohex does not re-gate documented or stable Desktop shortcut defaults after a Codex version change. It still fails closed when a configured-only command lacks a binding or when a destructive/context-sensitive Accessibility result cannot be uniquely verified. A new Codex build can therefore make a semantic Accessibility feature temporarily unavailable without disabling stable shortcut-backed features.
+
+Plan Mode is configured-only. X resolves and sends Codex's actual **Toggle plan
+mode** binding; users must assign that shortcut in Codex Keyboard Shortcuts.
+`Shift+Tab` is not treated as a reliable Plan Mode shortcut. If no real binding
+is configured, Plan Mode safely remains unavailable rather than guessing.
 
 ## Permission matrix
 

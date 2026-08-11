@@ -275,12 +275,9 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .primary-cta { min-height: 48px; padding-inline: 22px; font-size: 15px; }
-[aria-disabled="true"] { cursor: default; }
-.github-button[aria-disabled="true"] > span:not(.coming-soon),
-.primary-cta[aria-disabled="true"] > span:not(.coming-soon) { display: none; }
 .language-toggle:hover,
-.github-button:not([aria-disabled="true"]):hover,
-.primary-cta:not([aria-disabled="true"]):hover,
+.github-button:hover,
+.primary-cta:hover,
 .replay-button:hover { transform: translateY(-1px); }
 
 /* Hero */

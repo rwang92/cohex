@@ -3,7 +3,7 @@
 
   /* Public product and distribution repository. */
   var SiteConfig = Object.freeze({
-    githubURL: "https://github.com/rwang92/cohex"
+    githubURL: "https://github.com/rwang92/cohex/releases/latest"
   });
 
   /* Mirrors the production Swift constants. scripts/tests/site_policy_test.sh
@@ -61,8 +61,7 @@
       navControls: "操作",
       navMoreControls: "快捷操作",
       navCompatibility: "兼容性",
-      githubLabel: "View on GitHub",
-      comingSoon: "即将开放",
+      githubLabel: "下载 Cohex",
       heroEyebrow: "Cohex：为 Codex Desktop 而生的原生 macOS 控制器。",
       heroTitleLine1: "六个 Task，",
       heroTitleLine2: "一眼掌握。",
@@ -200,8 +199,7 @@
       navControls: "Controls",
       navMoreControls: "Shortcuts",
       navCompatibility: "Compatibility",
-      githubLabel: "View on GitHub",
-      comingSoon: "Coming soon",
+      githubLabel: "Download Cohex",
       heroEyebrow: "Cohex: A native macOS controller for Codex Desktop.",
       heroTitleLine1: "Six tasks.",
       heroTitleLine2: "One glance.",
@@ -403,22 +401,9 @@
   function configureGithubButtons() {
     var url = SiteConfig.githubURL.trim();
     document.querySelectorAll("#githubButton, #heroGithubButton").forEach(function (button) {
-      var comingSoon = button.querySelector(".coming-soon");
-      if (url) {
-        button.href = url;
-        button.target = "_blank";
-        button.rel = "noopener noreferrer";
-        button.removeAttribute("aria-disabled");
-        button.removeAttribute("tabindex");
-        comingSoon.hidden = true;
-      } else {
-        button.removeAttribute("href");
-        button.removeAttribute("target");
-        button.removeAttribute("rel");
-        button.setAttribute("aria-disabled", "true");
-        button.setAttribute("tabindex", "-1");
-        comingSoon.hidden = false;
-      }
+      button.href = url;
+      button.target = "_blank";
+      button.rel = "noopener noreferrer";
     });
   }
 
@@ -1440,14 +1425,6 @@
       var stage = document.getElementById(button.getAttribute("data-replay"));
       if (stage) {
         restartAnimation(stage);
-      }
-    });
-  });
-
-  document.querySelectorAll("[aria-disabled='true']").forEach(function (element) {
-    element.addEventListener("click", function (event) {
-      if (element.getAttribute("aria-disabled") === "true") {
-        event.preventDefault();
       }
     });
   });

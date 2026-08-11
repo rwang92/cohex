@@ -11,8 +11,8 @@ See [COMPATIBILITY.md](COMPATIBILITY.md) for the supported and experimental boun
 
 ## Install
 
-1. Download the versioned DMG and matching `.sha256` from the official GitHub Release.
-2. Verify the checksum and Apple signature as described in [SECURITY.md](SECURITY.md).
+1. Download the versioned DMG from the [latest official GitHub Release](https://github.com/rwang92/cohex/releases/latest).
+2. Check the GitHub asset digest and Apple trust chain as described in [SECURITY.md](SECURITY.md).
 3. Open the DMG and drag **Cohex** to **Applications**.
 4. Eject the DMG and launch `/Applications/Cohex.app`.
 5. Launch Codex Desktop.
@@ -94,6 +94,18 @@ tccutil reset Accessibility com.ranwang.CodexController
 - Confirm the mapping and its route in Settings → Mappings.
 - Shortcut-backed operations may still work when Accessibility-backed operations fail.
 - After a Codex update, a Chromium semantic control may have changed. Include the exact Codex version in the report.
+
+### X does not toggle Plan Mode
+
+1. In Codex Desktop, open **Settings → Keyboard Shortcuts**.
+2. Find **Toggle plan mode** and assign a real keyboard shortcut.
+3. Return to Cohex and press X again.
+
+Cohex reads and sends Codex's actual binding. It does not treat `Shift+Tab` as
+a reliable Plan Mode shortcut, and it does not write Codex's shortcut file for
+you. This route was focused-tested with Codex Desktop builds `26.803.61601` and
+`26.803.81509`; those builds are compatibility records, not a hard-coded
+support gate.
 
 ### D-pad choices, models, Stop, guarded deletion, or Skill insertion fail
 

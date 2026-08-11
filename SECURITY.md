@@ -20,10 +20,13 @@ Include:
 
 ## Verify a release
 
-Download only the versioned DMG and its matching `.sha256` sidecar from the official GitHub Release. From the download directory:
+Ordinary users need to download only the versioned DMG from the official
+GitHub Release. GitHub displays an immutable SHA-256 digest beside every
+release asset. From the download directory, calculate the DMG digest and
+compare it with that displayed value:
 
 ```sh
-shasum -a 256 -c 'Cohex-0.9.2-arm64.dmg.sha256'
+shasum -a 256 'Cohex-0.9.2-arm64.dmg'
 codesign --verify --strict --verbose=2 'Cohex-0.9.2-arm64.dmg'
 spctl --assess --type open --context context:primary-signature --verbose=2 \
   'Cohex-0.9.2-arm64.dmg'
@@ -42,6 +45,14 @@ codesign --display --requirements - \
 ```
 
 A production release must be signed by an Apple-issued `Developer ID Application` identity, use Hardened Runtime and a secure timestamp, and have a stapled Apple notarization ticket. Do not use `xattr` or disable Gatekeeper to launch a copy that fails these checks.
+
+The SHA-256 digest establishes that the downloaded bytes match the asset GitHub
+received. It does not establish who built the app or whether macOS trusts it.
+Developer ID signing identifies the publisher; Apple notarization, stapling,
+and Gatekeeper establish the executable trust checks. Cohex therefore retains
+an internal post-staple checksum and verifies downloaded release copies even
+though a separate checksum file is not a public asset. See GitHub's
+[release-asset digest announcement](https://github.blog/changelog/2025-06-03-releases-now-expose-digests-for-release-assets/).
 
 ## Security model
 

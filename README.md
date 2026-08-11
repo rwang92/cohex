@@ -3,16 +3,24 @@
 Cohex is a free proprietary macOS menu-bar utility that maps a
 genuine Nintendo Switch Pro Controller to Codex Desktop.
 
-## Download — Coming soon
+## Latest release
 
-The first notarized public beta is coming soon. There is currently no official
-downloadable build.
+### Cohex 0.9.2 Beta
 
-When a release is available, **GitHub Releases** in this repository will be the
-only official binary source. Download both:
+- Release date: **2026-08-10**
+- Version/build: **0.9.2 (2)**
+- [Download the latest Cohex release](https://github.com/rwang92/cohex/releases/latest)
 
-- `Cohex-<version>-arm64.dmg`
-- `Cohex-<version>-arm64.dmg.sha256`
+**GitHub Releases** is the only official binary source. Ordinary users need
+only the versioned `Cohex-<version>-arm64.dmg`. GitHub displays an immutable
+SHA-256 digest beside the release asset; the project also retains its own
+post-staple checksum as private release evidence.
+
+This release adds the optional pointer-position Recent 6 gesture and Token
+Clock mode, improves visual controller mappings, prioritizes running Tasks in
+Recent 6, and includes sleep/wake, energy, Token telemetry, Needs Input, and
+Task-wheel reliability fixes. See [CHANGELOG.md](CHANGELOG.md) for the complete
+Added / Changed / Fixed record.
 
 The supported target is:
 
@@ -23,11 +31,16 @@ The supported target is:
 
 Official builds will be distributed outside the Mac App Store as Developer ID
 signed, Apple-notarized and stapled DMGs. Follow [SECURITY.md](SECURITY.md) to
-verify the checksum and Apple signature before installation.
+check the GitHub asset digest and Apple trust chain before installation.
+
+X/Plan routing was tested with Codex Desktop builds `26.803.61601` and
+`26.803.81509` after assigning a real **Toggle plan mode** keyboard shortcut in
+Codex. These are tested builds, not a hard-coded support range or a complete
+hardware matrix. See [COMPATIBILITY.md](COMPATIBILITY.md).
 
 ## Install
 
-1. Verify the downloaded DMG and checksum.
+1. Download the versioned DMG from the latest GitHub Release.
 2. Open the DMG.
 3. Drag **Cohex** to **Applications**.
 4. Launch it from `/Applications`.

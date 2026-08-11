@@ -57,8 +57,9 @@ All notable public changes to Cohex are documented here.
 - Token and activity readers consume bounded, read-only local metadata and do
   not persist Task identity, quota values, or estimates.
 - The release pipeline requires Developer ID signing, Hardened Runtime, secure
-  timestamps, notarization, stapling, Gatekeeper verification, and a portable
-  SHA-256 sidecar.
+  timestamps, notarization, stapling, Gatekeeper verification, and an internal
+  post-staple SHA-256 check. GitHub exposes the immutable digest for the single
+  public DMG asset.
 
 ### Supported target
 
@@ -66,6 +67,11 @@ All notable public changes to Cohex are documented here.
 - macOS 14 or newer
 - Codex Desktop
 - Genuine Nintendo Switch Pro Controller over USB or Bluetooth
+
+Focused X/Plan compatibility was verified with Codex Desktop builds
+`26.803.61601` and `26.803.81509` after assigning a real **Toggle plan mode**
+shortcut in Codex. See [COMPATIBILITY.md](COMPATIBILITY.md) for the scope and
+limitations of that record.
 
 ### Known limitations
 
