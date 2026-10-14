@@ -240,6 +240,10 @@ img, svg { display: block; max-width: 100%; }
 
 .nav-links a:hover { color: var(--text); }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
+.release-date { color: var(--text-secondary); font-size: 13px; line-height: 1.45; }
+.nav-release-date { white-space: nowrap; font-size: 11px; }
+.download-action { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px 14px; }
+.download-action .release-date { white-space: nowrap; }
 
 .language-toggle,
 .github-button,
@@ -936,7 +940,7 @@ img, svg { display: block; max-width: 100%; }
   .glass-nav .brand-wordmark { opacity: max(.22, var(--nav-brand-opacity)); }
   .brand-wordmark { font-size: 18px; }
   .beta-pill { display: none; }
-  .github-button { display: none; }
+  .github-button, .nav-release-date { display: none; }
   .brand-hero { padding-inline: 20px; }
   .hero-wordmark { font-size: clamp(4rem, 24vw, 7.5rem); }
   .feature-section,

@@ -1,3 +1,7 @@
+<p><img src="assets/CohexMark.png" width="80" height="72" alt="Cohex logo"></p>
+
+[English](COMPATIBILITY.md) · [简体中文](COMPATIBILITY.zh-CN.md)
+
 # Compatibility
 
 This document describes **Cohex 1.0.0 (6)**. Product targets, completed package

@@ -1,3 +1,7 @@
+<p><img src="assets/CohexMark.png" width="80" height="72" alt="Cohex logo"></p>
+
+[English](SECURITY.md) · [简体中文](SECURITY.zh-CN.md)
+
 # Security
 
 ## Supported releases

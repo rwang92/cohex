@@ -1,3 +1,7 @@
+<p><img src="assets/CohexMark.png" width="80" height="72" alt="Cohex logo"></p>
+
+[English](SUPPORT.md) · [简体中文](SUPPORT.zh-CN.md)
+
 # Support
 
 This guide describes **Cohex 1.0.0 (6)** for Apple Silicon Macs running macOS 14

@@ -1,8 +1,14 @@
+<p><img src="assets/CohexMark.png" width="80" height="72" alt="Cohex logo"></p>
+
+[English](CHANGELOG.md) · [简体中文](CHANGELOG.zh-CN.md)
+
 # Changelog
 
 All notable public changes to Cohex are documented here.
 
 ## [1.0.0] — 2026-10-13
+
+<sub>🆕 New release · Last updated: October 13, 2026</sub>
 
 Release build: **1.0.0 (6)** — Your Codex tasks, one press away.
 [Download for Apple Silicon](https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg).

@@ -1,3 +1,7 @@
+<p><img src="assets/CohexMark.png" width="80" height="72" alt="Cohex logo"></p>
+
+[English](PRIVACY.md) · [简体中文](PRIVACY.zh-CN.md)
+
 # Privacy
 
 Last updated: October 13, 2026

@@ -1,6 +1,16 @@
-# Cohex 1.0 — Your Codex tasks, one press away
+<p><img src="assets/CohexMark.png" width="80" height="72" alt="Cohex logo"></p>
 
-**Cohex 1.0.0 (6)** · Apple Silicon · macOS 14+ · October 13, 2026
+[English](README.md) · [简体中文](README.zh-CN.md)
+
+# Cohex
+
+Your Codex tasks, one press away.
+
+## 🆕 New release
+
+**Cohex 1.0.0 (6)** · Apple Silicon · macOS 14+
+
+Released **October 13, 2026** · Last updated **October 13, 2026** (Pacific time)
 
 [Download Cohex 1.0](https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg)
 · [Product website](https://rwang92.github.io/cohex/)
@@ -11,7 +21,7 @@ Cohex is a free, proprietary native macOS companion for Codex Desktop. Deep-pres
 your trackpad to open a local task wheel, see what needs attention, and follow
 generation speed and usage history. A controller is optional.
 
-## New in 1.0
+## What's new
 
 - **Force Touch, close at hand.** Deep-press the floating hexagon or right-click
   to open Recent 6. Opt into global pressure to summon it at the pointer with a
@@ -78,33 +88,6 @@ and one live-host probe skipped. Final-package fresh-user checks, repeated
 physical-pressure trials and a complete device matrix are not recorded. Native
 accessibility, controller and long-running estimate coverage remain limited;
 see [COMPATIBILITY.md](COMPATIBILITY.md). No measured prediction accuracy is claimed.
-
-## 项目简介
-
-**Cohex 1.0.0 (6)** 适用于 Apple Silicon 与 macOS 14 及以上版本。
-[下载 Cohex 1.0](https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg)。
-
-Cohex 是为 Codex Desktop 准备的免费专有 macOS 助手。重按内置触控板，
-展开本地任务轮盘；用颜色了解进度，用生成速率与统计查看工作节奏。手柄可选。
-
-- **重按与上手指南**：拖动六边形、重按并完全松开，再点击任务或中心。
-  松开本身不会选择任务。全局重按默认关闭，可在指南或设置 → 触控板主动启用；
-  新用户默认 Medium 155%。
-- **Recent 6 与颜色**：关闭 Codex 侧栏也能切换最近更新的六个本地任务。
-  蓝色活跃、黄色等待输入、鲜绿完成未读、浅绿完成已读，
-  另有空闲、错误和未知。七种出厂默认色均可改，保留已有配色。
-- **用量与统计**：聚合本机观测到的本地任务，包含轮盘外任务；输出已包含 reasoning。
-  Weekly 是官方余额，剩余 Token、工作时长和满额产出是本地估算。
-  并发 Token 累加，重叠工作时间只计一次，数据留在本机。
-- **明确边界**：1.0 的 SSH 与自动更新不可用，使用 GitHub Releases 手动更新。
-  全局唤出仅支持 MacBook 内置 Force Touch，不支持 Magic Trackpad；Switch Pro 手柄可选。
-
-从 DMG 拖入 Applications，启动 Cohex 和 Codex Desktop，
-跟随中英文使用指南处理权限并练习。Cohex 位于菜单栏，没有普通 Dock 主窗口。
-升级时先退出 Cohex，再替换应用；设置与本地统计历史保留，macOS 可能要求重新授权。
-正式包已通过 Developer ID 签名、公证、装订与 Gatekeeper 检查；自动测试记录为
-2,617 项、零失败，其中 1 项 live-host 检查跳过。最终包的新账户、重复物理按压
-和完整设备矩阵尚无记录，验证范围详见兼容性说明。
 
 ## Project information
 
