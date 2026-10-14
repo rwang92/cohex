@@ -3,7 +3,7 @@
 
   /* Public product and distribution repository. */
   var SiteConfig = Object.freeze({
-    githubURL: "https://github.com/rwang92/cohex/releases/latest"
+    githubURL: "https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg"
   });
 
   /* Mirrors the production Swift constants. scripts/tests/site_policy_test.sh
@@ -51,8 +51,54 @@
 
   var copy = {
     "zh-CN": {
+      navUsage: "用量",
+      notesTitle: "说明",
+      pausePlayback: "暂停",
+      resumePlayback: "继续循环",
+      staticPlayback: "静态预览",
+      deviceSliding: "滑动接触",
+      devicePressing: "持续重按",
+      deviceReleased: "完全松开",
+      deviceClick: "独立点击",
+      deviceLHeld: "L 按住",
+      deviceStick: "L 按住 · 摇杆选择",
+      deviceLReleased: "L 已松开",
+      controllerDemoHold: "按住 L → 展开轮盘",
+      controllerDemoChoose: "L 保持按住 · 右摇杆选择「完善首页」",
+      controllerDemoRelease: "松开 L → 请求切换「完善首页」",
+      controllerDemoRest: "L 与摇杆已回位",
+      pointerDemoClickReady: "移动到任务 · 点击选择",
+      pointerDemoClose: "点击中心 · 收起轮盘",
+      pointerDemoTravelling: "保持收起 · 移动到光标位置",
+      pointerDemoAnother: "换一个位置 · 再召唤一次",
+      compatTrackpadFeature: "Force Touch 全局唤出",
+      compatAccessibilityFeature: "原生系统辅助功能",
+      noteLink1: "查看说明 1",
+      noteBack1: "返回说明 1 的来源",
+      noteLink2: "查看说明 2",
+      noteBack2: "返回说明 2 的来源",
+      noteLink3: "查看说明 3",
+      noteBack3: "返回说明 3 的来源",
+      noteLink4: "查看说明 4",
+      noteBack4: "返回说明 4 的来源",
+      noteLink5: "查看说明 5",
+      noteBack5: "返回说明 5 的来源",
+      noteLink6: "查看说明 6",
+      noteBack6: "返回说明 6 的来源",
+      noteLink7: "查看说明 7",
+      noteBack7: "返回说明 7 的来源",
+      noteLink8: "查看说明 8",
+      noteBack8: "返回说明 8 的来源",
+      noteLink9: "查看说明 9",
+      noteBack9: "返回说明 9 的来源",
+      noteLink10: "查看说明 10",
+      noteBack10: "返回说明 10 的来源",
+      noteLink11: "查看说明 11",
+      noteBack11: "返回说明 11 的来源",
+      noteLink12: "查看说明 12",
+      noteBack12: "返回说明 12 的来源",
       documentTitle: "Cohex — 六个 Task，一眼掌握。",
-      documentDescription: "Cohex 将任务状态、Token 用量与切换操作集成于一个悬浮六边形，让手柄与鼠标自然掌握 Codex Desktop 的 Recent 6。",
+      documentDescription: "Cohex 1.0：用 Force Touch 掌握 Codex Desktop 的本地任务、生成速率与用量统计。适用于 Apple Silicon Mac，手柄可选。",
       skipToContent: "跳到主要内容",
       navLabel: "主导航",
       navSections: "页面章节",
@@ -61,38 +107,35 @@
       navControls: "操作",
       navMoreControls: "快捷操作",
       navCompatibility: "兼容性",
-      githubLabel: "下载 Cohex",
-      heroEyebrow: "Cohex：为 Codex Desktop 而生的原生 macOS 控制器。",
+      githubLabel: "下载 v1.0.0",
+      heroEyebrow: "为 Codex Desktop 准备的原生 macOS 助手。",
       heroTitleLine1: "六个 Task，",
       heroTitleLine2: "一眼掌握。",
-      heroBody: "任务状态、Token 用量与切换操作，集成于一个悬浮六边形。用手柄保持工作节奏，也可以直接用鼠标查看与切换。",
+      heroBody: "任务状态、Token 用量与切换操作，集成于一个悬浮六边形。用触控板掌握 Codex Desktop，也可以选择 Switch Pro 手柄。",
       exploreFeatures: "了解核心功能",
       hold: "按住",
       choose: "选择",
-      heroMonitorCaption: "Weekly 剩余 · 68%",
+      heroMonitorCaption: "聚合速率 · 24.6 tok/s",
       heroVisualDescription: "动画展示正确布局的 Nintendo Switch Pro Controller：按住 L，用右摇杆选择六边形 Monitor 上的 Task，状态边同时显示活跃、等待输入、完成与错误。",
       recentEyebrow: "Recent 6 · Token Monitor",
       recentTitleLine1: "状态在边上，",
       recentTitleLine2: "注意力留在任务上。",
-      recentBody: "六条边对应最近六个 Task。颜色先告诉你哪里正在运行、哪里需要回应；中央只呈现当前可见 Task 的生成节奏与额度概览。",
-      tokenDisclosure: "tok/s 仅统计当前可见 Task 的 output 与 reasoning output。Weekly、剩余 Token 与可用时长为本机校准估算，并非 OpenAI 提供的精确额度。",
-      recentDemoLabel: "从 Compact 到完整状态",
-      replay: "重播",
+      recentBody: "六条边对应最近更新的六个本地任务。展开后查看名称，选择时位置保持稳定。蓝色表示活跃，黄色提示需要输入，绿色区分完成后是否已查看。",
+      tokenDisclosure: "默认颜色可在设置 → 通用自定义。图标、名称和选中标记也传达状态；不会覆盖你保存的配色。",
       demoTaskBuild: "修复构建",
       demoTaskLanding: "完善首页",
       demoTaskInstall: "验证安装",
       demoTaskDocs: "整理文档",
       demoTaskSync: "排查同步",
       demoTaskResearch: "研究方案",
-      demoEstimateTokens: "估算 Token · 1.24M",
-      demoEstimateTime: "可用 · 42.50h",
+      demoEstimateTokens: "≈ Token · 1.24M",
+      demoEstimateTime: "≈ 工作时长 · 42.50h",
       stepHold: "按住 L",
       stepChoose: "右摇杆选择",
-      stepRelease: "松开切换",
-      recentDemoDescription: "Compact Monitor 默认仅显示 Weekly 剩余比例 68%。展开为 Recent 6 后，五种状态依次突出；中央显示 24.6 tok/s、Weekly 68% 与本机估算。",
+      stepRelease: "松开请求切换",
+      recentDemoDescription: "示例从显示聚合速率 24.6 的小六边形展开；中央显示 Weekly 官方余额示例、Token 和工作时长估算、重置日期与任务数。",
       stateLegendLabel: "Task 状态图例",
       stateCycleDescription: "状态会自动循环。选择任一状态可暂停循环，并突出轮盘中对应的边。",
-      recentReplayLabel: "重播状态演示",
       stateActive: "活跃",
       stateUnread: "完成未读",
       stateViewed: "完成已读",
@@ -101,28 +144,27 @@
       controllerEyebrow: "Controller & Pointer",
       controllerTitleLine1: "一个六边形，",
       controllerTitleLine2: "两种自然的控制方式。",
-      controllerBody: "按住 L，用右摇杆选中 Task，松开立即切换。手离开手柄时，也可以拖动 Monitor、展开 Recent 6 并直接点击任务。",
+      controllerBody: "重按悬浮六边形或右键展开。启用全局重按后，还能在指针位置召出轮盘。松开压力后点击任务，或点击中央收起；也可选用手柄完成切换。",
       controlModeLabel: "操作方式",
-      controlsReplayLabel: "重播操作方式演示",
-      controllerMethodTitle: "用手柄保持工作节奏",
+      controllerMethodTitle: "可选 Switch Pro 手柄",
       flowHoldTitle: "按住 L",
       flowHoldBody: "从 Compact Monitor 展开 Recent 6。",
       flowChooseTitle: "推动右摇杆",
       flowChooseBody: "颜色与 Task 名称同步高亮。",
       flowReleaseTitle: "松开 L",
-      flowReleaseBody: "精确切换到对应 Task；B 随时取消。",
-      pointerFlowMoveTitle: "拖动",
-      pointerFlowMoveBody: "把 Compact Monitor 放在顺手的位置。",
-      pointerFlowExpandTitle: "展开",
-      pointerFlowExpandBody: "Force Touch 或右键打开 Recent 6。",
-      pointerFlowChooseTitle: "点击 Task",
-      pointerFlowChooseBody: "切换任务；点击中央即可收起。",
+      flowReleaseBody: "向选中的本地任务发送切换请求；B 随时取消。",
+      pointerFlowMoveTitle: "拖动位置",
+      pointerFlowMoveBody: "把小六边形拖到顺手处。",
+      pointerFlowExpandTitle: "局部重按",
+      pointerFlowExpandBody: "在六边形上重按，展开后完全松开。",
+      pointerFlowChooseTitle: "点击选择",
+      pointerFlowChooseBody: "先完全松开压力，再点击任务。",
       controllerDemoLabel: "Switch Pro 操作流",
       calloutHold: "按住展开",
       calloutSelect: "360° 选择",
       controllerResult: "切换到「完善首页」",
       pointerResult: "Recent 6 已展开",
-      controllerDemoDescription: "手柄模式依次展示按住 L、展开 Recent 6、右摇杆选择与松开切换；触控板模式展示 Force Touch 后保持 Recent 6 展开。",
+      controllerDemoDescription: "默认依次演示各项操作；选择一个选项后，只重复播放该操作。减少动态效果时显示静态状态。",
       mappingLabel: "其他常用操作",
       mappingSkills: "Skill Wheel",
       mappingSkillsNote: "收藏 Skill",
@@ -136,10 +178,9 @@
       mappingPlanNote: "打开或关闭",
       shortcutsEyebrow: "More controls",
       shortcutsTitle: "常用操作，都在熟悉的位置。",
-      shortcutsBody: "同一只 Switch Pro Controller 继续处理 Skill、模型与问题、听写、确认和 Plan 文档。每一步都有清晰、单一的物理入口。",
+      shortcutsBody: "可选 Nintendo Switch Pro Controller 支持 USB 与 Bluetooth。按住 L、右摇杆选择、松开切换本地任务；还可使用 Skill、模型与问题、听写、确认和 Plan 文档。",
       shortcutsDemoLabel: "五项核心操作",
-      shortcutsDemoDescription: "演示会自动循环 ZL、D-pad、ZR、A 与 B、Y。选择任一操作可暂停并保持对应画面。",
-      shortcutsReplayLabel: "重播快捷操作演示",
+      shortcutsDemoDescription: "演示会自动循环 ZL、D-pad、ZR、A 与 B、Y。选择任一操作后，将只重复演示该操作。",
       dictationStatus: "正在听写",
       dictationRelease: "松开 ZR 完成",
       permissionTitle: "权限请求",
@@ -159,14 +200,14 @@
       planStepTwo: "实现控制映射",
       planStepThree: "验证状态反馈",
       pointerEyebrow: "Mouse & Trackpad",
-      pointerTitle: "手离开手柄，也一样自然。",
-      pointerBody: "Cohex 的悬浮 Monitor 不抢走 Codex 输入焦点。拖动它改变位置；Force Touch 或右键展开；点击 Task 切换，点击中央收起。",
-      pointerBoundary: "鼠标只直接操作 Token Monitor 与 Recent 6。Cohex 不会把手柄摇杆伪装成 macOS 系统光标。",
+      pointerTitle: "触控板",
+      pointerBody: "全局重按需要主动启用，默认使用 Medium 155%。可在设置 → 触控板调整力度并练习。只支持 MacBook 内置触控板的全局唤出。",
+      pointerBoundary: "网页只是循环演示，不监听你的触控板。Magic Trackpad 全局唤出不在 1.0 支持范围内。",
       pointerDemoLabel: "拖动、展开与切换",
       pointerDrag: "拖动",
       pointerExpand: "Force Touch / 右键",
       pointerSwitch: "点击 Task",
-      pointerDemoDescription: "一次播放的动画：鼠标拖动 Compact Monitor，Force Touch 展开 Recent 6，光标点击等待输入的 Task，再点击中心收起。",
+      pointerDemoDescription: "自动展示拖动、远距离重按召唤和点击选择。选择选项后重复播放该操作；示例不监听真实压力。",
       compatibilityEyebrow: "Compatibility",
       compatAppleSiliconTitle: "Apple Silicon",
       compatAppleSilicon: "arm64 原生构建",
@@ -174,23 +215,114 @@
       compatMacOS: "支持浅色、深色与辅助功能设置",
       compatCodexTitle: "Codex Desktop",
       compatCodex: "面向当前桌面 Task 工作流",
-      compatControllerTitle: "Nintendo Switch Pro",
-      compatController: "USB 与 Bluetooth",
+      compatControllerTitle: "手柄可选",
+      compatController: "Nintendo Switch Pro · USB / Bluetooth",
       compatAccessibilityTitle: "Accessibility",
-      compatAccessibility: "部分语义操作需要 macOS 授权",
-      compatLocalTitle: "Local by design",
-      compatLocal: "无开发者运营的后端或分析 SDK",
+      compatAccessibility: "按需授予辅助功能；指南中查看输入权限",
+      compatLocalTitle: "本地优先",
+      compatLocal: "无开发者后端或分析 SDK",
       brandStoryEyebrow: "为什么叫 Cohex",
       brandStoryTitle: "从 Codex，到六边形。",
       brandStoryBody1: "Cohex 由 Codex 与 Hex 融合而来。Co 保留它与 Codex 的连接，Hex 指向产品的六边形界面，也对应 Recent 6 的六个 Task。",
       brandStoryBody2: "标记以苯环的六边结构为灵感：六条边承载任务状态，中央圆代表当前聚焦的 Task。名字、图标与交互，因此共享同一种几何语言。",
       footerTagline: "六个 Task，一眼掌握。",
       independenceDisclosure: "Cohex 是独立项目，与 OpenAI、Apple、Nintendo 或 Work Louder 无隶属、赞助或背书关系。所有产品名称与商标归其各自所有者。",
-      privacyDisclosure: "页面动画使用匿名固定示例，不读取本机 Task、Token 或任何个人数据。"
+      privacyDisclosure: "所有动画和统计使用固定匿名示例，不读取本机任务、Token 或个人数据。",
+      footerNavLabel: "文档链接",
+      releaseNotice: "Cohex v1.0.0 适用于 Apple Silicon、macOS 14 及以上版本。安装包通过 GitHub Releases 提供，已完成 Developer ID 签名和 Apple 公证。",
+      supportLink: "安装与常见问题",
+      privacyLink: "隐私",
+      changelogLink: "版本变化",
+      paletteNote: "鲜绿：完成未读 · 浅绿：完成已读 · 白：空闲 · 灰：状态未知。这里展示出厂默认色。",
+      readNote: "完成后进入任务，持续查看约 10 秒并确认仍可见，或更早离开时，Cohex 会标为已读。若任务在你查看时完成，会等到离开后标记；这不是账号全局未读状态。",
+      usageEyebrow: "Token Monitor · Statistics",
+      usageTitle: "此刻的节奏，和积累的用量。",
+      usageIntro: "悬浮速率汇总这台 Mac 观测到的本地任务，包括轮盘外的任务。设置 → 统计把实际记录与估算放在同一张时间轴上。",
+      usageRateTitle: "聚合生成速率",
+      usageRateBody: "tok/s 统计输出 Token，已包含 reasoning，不会重复相加。它与历史平均速率是不同读数。",
+      usageQuotaTitle: "读数与估算分清",
+      usageQuotaBody: "Weekly 是官方七日额度余额。≈ Token、剩余工作时长与满额产出由本地观测校准。",
+      usageHistoryTitle: "历史留在本机",
+      usageHistoryBody: "查看最近 24 小时、7 天或额度周期。并行任务的 Token 累加，工作时间按重叠区间只计一次，排除等待、阅读、空闲与睡眠。",
+      statsDemoTitle: "统计示例 · 点击时间柱查看",
+      statsDemoDisclosure: "固定演示数据，不读取本机或账号。统计覆盖本机观测，不代表其他设备或云端的全部活动，也不承诺预测准确度。",
+      statsOutput: "已记录输出",
+      statsAverage: "平均生成速率",
+      statsWork: "工作时间",
+      statsQuota: "满额产出估算",
+      statsMetricLabel: "图表指标",
+      statsTokens: "输出 Token",
+      statsSpeed: "平均 tok/s",
+      statsMinutes: "工作分钟",
+      statsWeekly: "Weekly 官方余额 · 示例",
+      statsSelection: "已选时间",
+      statsSelectionHint: "点击时间柱，或使用左右方向键。两张图保持同一选择，总计不随选择改变。",
+      compatTrackpadTitle: "MacBook 内置触控板",
+      compatTrackpad: "Force Touch 全局唤出；Magic Trackpad 暂不支持",
+      deferredTitle: "1.0 的明确边界",
+      deferredBody: "SSH 任务和自动更新保持灰色、不可用。更新通过 GitHub Releases 手动下载安装。部分 Codex 语义操作随桌面版本变化；设备验收范围随正式发布说明公布。",
+      monitorReset: "10月20日重置 · 7天",
+      monitorTasks: "3 个活跃任务",
+      pointerFlowGlobalTitle: "重按召唤",
+      pointerFlowGlobalBody: "启用后，在空白处重按，轮盘来到指针位置。",
+      pointerDemoDrag: "演示：按住并拖动小六边形",
+      pointerDemoPlaced: "已放好：这是六边形的保存位置",
+      pointerDemoLocal: "在六边形上重按 → 局部展开",
+      pointerDemoLocalReleased: "完全松开；轮盘保持展开",
+      pointerDemoGlobalReady: "移到空白处 · 演示全局重按已启用",
+      pointerDemoGlobal: "在空白处重按 → 轮盘来到指针旁",
+      pointerDemoRelease: "已完全松开 · 现在才可以点击任务",
+      pointerDemoSelected: "示例已选择「完善首页」· 不操作真实任务"
     },
     en: {
+      navUsage: "Usage",
+      notesTitle: "Notes",
+      pausePlayback: "Pause",
+      resumePlayback: "Resume loop",
+      staticPlayback: "Static preview",
+      deviceSliding: "Sliding contact",
+      devicePressing: "Deep press held",
+      deviceReleased: "Fully released",
+      deviceClick: "Separate click",
+      deviceLHeld: "L held",
+      deviceStick: "L held · Stick selects",
+      deviceLReleased: "L released",
+      controllerDemoHold: "Hold L → open the wheel",
+      controllerDemoChoose: "Keep L held · Right stick selects “Polish landing”",
+      controllerDemoRelease: "Release L → request “Polish landing”",
+      controllerDemoRest: "L and stick are released",
+      pointerDemoClickReady: "Move to a task · Click to choose",
+      pointerDemoClose: "Click the center · Close the wheel",
+      pointerDemoTravelling: "Stay compact · Move to the pointer",
+      pointerDemoAnother: "Move elsewhere · Summon again",
+      compatTrackpadFeature: "Global Force Touch summon",
+      compatAccessibilityFeature: "Native system accessibility",
+      noteLink1: "Read note 1",
+      noteBack1: "Return to note 1 reference",
+      noteLink2: "Read note 2",
+      noteBack2: "Return to note 2 reference",
+      noteLink3: "Read note 3",
+      noteBack3: "Return to note 3 reference",
+      noteLink4: "Read note 4",
+      noteBack4: "Return to note 4 reference",
+      noteLink5: "Read note 5",
+      noteBack5: "Return to note 5 reference",
+      noteLink6: "Read note 6",
+      noteBack6: "Return to note 6 reference",
+      noteLink7: "Read note 7",
+      noteBack7: "Return to note 7 reference",
+      noteLink8: "Read note 8",
+      noteBack8: "Return to note 8 reference",
+      noteLink9: "Read note 9",
+      noteBack9: "Return to note 9 reference",
+      noteLink10: "Read note 10",
+      noteBack10: "Return to note 10 reference",
+      noteLink11: "Read note 11",
+      noteBack11: "Return to note 11 reference",
+      noteLink12: "Read note 12",
+      noteBack12: "Return to note 12 reference",
       documentTitle: "Cohex — Six tasks. One glance.",
-      documentDescription: "Cohex brings task status, token usage, and switching together in one floating hexagon for Codex Desktop, controlled naturally by game controller or mouse.",
+      documentDescription: "Cohex 1.0: Force Touch control, local tasks, generation rate and usage statistics for Codex Desktop. For Apple Silicon Macs, with optional controller support.",
       skipToContent: "Skip to main content",
       navLabel: "Primary navigation",
       navSections: "Page sections",
@@ -199,38 +331,35 @@
       navControls: "Controls",
       navMoreControls: "Shortcuts",
       navCompatibility: "Compatibility",
-      githubLabel: "Download Cohex",
-      heroEyebrow: "Cohex: A native macOS controller for Codex Desktop.",
+      githubLabel: "Download v1.0.0",
+      heroEyebrow: "A native macOS companion for Codex Desktop.",
       heroTitleLine1: "Six tasks.",
       heroTitleLine2: "One glance.",
-      heroBody: "Task status, token usage, and switching come together in one floating hexagon. Stay in flow with a controller, or use the mouse to inspect and switch directly.",
+      heroBody: "Task status, token usage, and switching come together in one floating hexagon for Codex Desktop. Use a trackpad, with an optional Switch Pro controller.",
       exploreFeatures: "Explore the core features",
       hold: "Hold",
       choose: "Choose",
-      heroMonitorCaption: "Weekly remaining · 68%",
+      heroMonitorCaption: "Combined rate · 24.6 tok/s",
       heroVisualDescription: "An animation shows a correctly arranged Nintendo Switch Pro Controller. Hold L and use the right stick to choose a task while the Monitor edges show active, needs input, complete, and error states.",
       recentEyebrow: "Recent 6 · Token Monitor",
       recentTitleLine1: "Status on the edge.",
       recentTitleLine2: "Focus on the task.",
-      recentBody: "Each edge represents one of your six most recent tasks. Color tells you what is running and what needs you; the center keeps the visible task’s generation rhythm and usage overview in focus.",
-      tokenDisclosure: "tok/s counts output and reasoning output for the currently visible task. Weekly, remaining tokens, and available time are locally calibrated estimates—not an exact quota supplied by OpenAI.",
-      recentDemoLabel: "From Compact to the full picture",
-      replay: "Replay",
+      recentBody: "Six edges represent the six most recently updated local tasks. Expand to see names; positions stay stable while you choose. Blue means active, yellow needs input, and two greens distinguish completed work awaiting a view from work already viewed.",
+      tokenDisclosure: "Customize the default colors in Settings → General. Icons, names and selection marks also convey state. Your saved palette is preserved.",
       demoTaskBuild: "Fix build",
       demoTaskLanding: "Polish landing",
       demoTaskInstall: "Verify install",
       demoTaskDocs: "Organize docs",
       demoTaskSync: "Debug sync",
       demoTaskResearch: "Research approach",
-      demoEstimateTokens: "Est. tokens · 1.24M",
-      demoEstimateTime: "Available · 42.50h",
+      demoEstimateTokens: "≈ Tokens · 1.24M",
+      demoEstimateTime: "≈ Work time · 42.50h",
       stepHold: "Hold L",
       stepChoose: "Choose with right stick",
-      stepRelease: "Release to switch",
-      recentDemoDescription: "The Compact Monitor shows only the 68% Weekly remaining estimate. After it expands into Recent 6, five task states are emphasized in turn; the center shows 24.6 tok/s, Weekly 68%, and local estimates.",
+      stepRelease: "Release to request switch",
+      recentDemoDescription: "The example expands from the compact aggregate rate of 24.6 to the task wheel, with sample official Weekly balance, estimated tokens and working hours, reset date and active-task count.",
       stateLegendLabel: "Task status legend",
       stateCycleDescription: "Statuses cycle automatically. Choose one to pause the cycle and emphasize its matching edge on the wheel.",
-      recentReplayLabel: "Replay status demonstration",
       stateActive: "Active",
       stateUnread: "Complete unread",
       stateViewed: "Complete viewed",
@@ -239,28 +368,27 @@
       controllerEyebrow: "Controller & Pointer",
       controllerTitleLine1: "One hexagon.",
       controllerTitleLine2: "Two natural ways to control it.",
-      controllerBody: "Hold L, choose a task with the right stick, and release to switch. When your hand leaves the controller, drag the Monitor, expand Recent 6, and click a task directly.",
+      controllerBody: "Deep-press the floating hexagon or right-click to expand. With global pressure enabled, summon the wheel at the pointer too. Release, then click a task or the center to close. A controller is another option.",
       controlModeLabel: "Control method",
-      controlsReplayLabel: "Replay control method demonstration",
-      controllerMethodTitle: "Stay in flow with the controller",
+      controllerMethodTitle: "Optional Switch Pro",
       flowHoldTitle: "Hold L",
       flowHoldBody: "Expand Recent 6 from the Compact Monitor.",
       flowChooseTitle: "Move the right stick",
       flowChooseBody: "Task color and title highlight together.",
       flowReleaseTitle: "Release L",
-      flowReleaseBody: "Switch to the exact task; press B to cancel.",
-      pointerFlowMoveTitle: "Drag",
-      pointerFlowMoveBody: "Place the Compact Monitor where it stays within reach.",
-      pointerFlowExpandTitle: "Expand",
-      pointerFlowExpandBody: "Open Recent 6 with Force Touch or right-click.",
-      pointerFlowChooseTitle: "Click a task",
-      pointerFlowChooseBody: "Switch tasks; click the center to collapse.",
+      flowReleaseBody: "Request a switch to the selected local task. Press B to cancel.",
+      pointerFlowMoveTitle: "Move the monitor",
+      pointerFlowMoveBody: "Move the compact hexagon within reach.",
+      pointerFlowExpandTitle: "Local deep press",
+      pointerFlowExpandBody: "Deep-press it, then fully release after it opens.",
+      pointerFlowChooseTitle: "Click to choose",
+      pointerFlowChooseBody: "Fully release pressure before clicking a task.",
       controllerDemoLabel: "Switch Pro control flow",
       calloutHold: "Hold to expand",
       calloutSelect: "360° selection",
       controllerResult: "Switched to “Polish landing”",
       pointerResult: "Recent 6 expanded",
-      controllerDemoDescription: "Controller mode shows holding L, expanding Recent 6, choosing with the right stick, and releasing to switch. Trackpad mode shows a Force Touch and leaves Recent 6 expanded.",
+      controllerDemoDescription: "Operations play automatically. Choose an option to repeat only that operation. Reduced Motion shows static states.",
       mappingLabel: "Other common controls",
       mappingSkills: "Skill Wheel",
       mappingSkillsNote: "Favorite skills",
@@ -274,10 +402,9 @@
       mappingPlanNote: "Open or close",
       shortcutsEyebrow: "More controls",
       shortcutsTitle: "Common actions, right where you expect them.",
-      shortcutsBody: "The same Switch Pro Controller handles skills, models and questions, dictation, confirmation, and Plan documents. Each action has one clear physical entry point.",
+      shortcutsBody: "An optional Nintendo Switch Pro Controller works over USB or Bluetooth. Hold L, choose with the right stick, and release to switch local tasks. Skills, models, questions, dictation, confirmation and Plan documents are close at hand.",
       shortcutsDemoLabel: "Five core controls",
-      shortcutsDemoDescription: "The demo cycles automatically through ZL, the D-pad, ZR, A and B, and Y. Choose one to pause and hold its view.",
-      shortcutsReplayLabel: "Replay shortcut demonstration",
+      shortcutsDemoDescription: "The demo cycles automatically through ZL, the D-pad, ZR, A and B, and Y. Choose one to repeat only that operation.",
       dictationStatus: "Dictating",
       dictationRelease: "Release ZR to Finish",
       permissionTitle: "Permission Request",
@@ -297,14 +424,14 @@
       planStepTwo: "Implement control mappings",
       planStepThree: "Verify status feedback",
       pointerEyebrow: "Mouse & Trackpad",
-      pointerTitle: "Just as natural when you leave the controller.",
-      pointerBody: "The floating Cohex Monitor never steals focus from Codex. Drag to reposition it, Force Touch or right-click to expand, click a task to switch, and click the center to collapse.",
-      pointerBoundary: "The mouse directly controls only Token Monitor and Recent 6. Cohex never impersonates the macOS system pointer with a controller stick.",
+      pointerTitle: "Trackpad",
+      pointerBody: "Global pressure is opt-in, with Medium 155% for fresh installs. Adjust strength and practice in Settings → Trackpad. Global activation supports MacBook built-in trackpads only.",
+      pointerBoundary: "This page plays a demonstration; it does not listen to your trackpad. Magic Trackpad global activation is outside the 1.0 supported target.",
       pointerDemoLabel: "Drag, expand, and switch",
       pointerDrag: "Drag",
       pointerExpand: "Force Touch / right-click",
       pointerSwitch: "Click task",
-      pointerDemoDescription: "A one-shot animation drags the Compact Monitor, expands Recent 6 with Force Touch, clicks a task that needs input, and clicks the center to collapse.",
+      pointerDemoDescription: "Moving, distant global summons and click selection play automatically. Choose an option to repeat it. The demo never listens to real pressure.",
       compatibilityEyebrow: "Compatibility",
       compatAppleSiliconTitle: "Apple Silicon",
       compatAppleSilicon: "Native arm64 build",
@@ -312,19 +439,64 @@
       compatMacOS: "Light, dark, and accessibility appearances",
       compatCodexTitle: "Codex Desktop",
       compatCodex: "Built around the current desktop task workflow",
-      compatControllerTitle: "Nintendo Switch Pro",
-      compatController: "USB and Bluetooth",
+      compatControllerTitle: "Controller optional",
+      compatController: "Nintendo Switch Pro · USB / Bluetooth",
       compatAccessibilityTitle: "Accessibility",
-      compatAccessibility: "Some semantic actions require macOS permission",
+      compatAccessibility: "Grant Accessibility as needed; inspect input access in the guide",
       compatLocalTitle: "Local by design",
-      compatLocal: "No developer-operated backend or analytics SDK",
+      compatLocal: "No developer backend or analytics SDK",
       brandStoryEyebrow: "Why Cohex",
       brandStoryTitle: "From Codex to the hexagon.",
       brandStoryBody1: "Cohex blends Codex and hex. “Co” preserves its connection to Codex; “Hex” names the product’s six-sided interface and the six tasks in Recent 6.",
       brandStoryBody2: "The mark draws on the hexagonal structure of a benzene ring: six edges carry task state, while the center circle represents the task in focus. Name, icon, and interaction share one geometric language.",
       footerTagline: "Six tasks. One glance.",
       independenceDisclosure: "Cohex is an independent project and is not affiliated with, sponsored by, or endorsed by OpenAI, Apple, Nintendo, or Work Louder. All product names and trademarks belong to their respective owners.",
-      privacyDisclosure: "The animations use fixed anonymous examples and never read local tasks, tokens, or personal data."
+      privacyDisclosure: "All animations and statistics use fixed anonymous examples and never read local tasks, tokens or personal data.",
+      footerNavLabel: "Documentation",
+      releaseNotice: "Cohex v1.0.0 requires Apple Silicon and macOS 14 or later. Download the Developer ID signed, Apple-notarized installer from GitHub Releases.",
+      supportLink: "Installation & help",
+      privacyLink: "Privacy",
+      changelogLink: "What changed",
+      paletteNote: "Bright green: complete unread · Pale green: complete viewed · White: idle · Gray: unknown. These are factory defaults.",
+      readNote: "After completion, entering a task marks it viewed after about 10 seconds with fresh visibility, or sooner when you leave. Work completed during your visit waits for departure. This is Cohex’s observation, not account-wide unread state.",
+      usageEyebrow: "Token Monitor · Statistics",
+      usageTitle: "Your pace now. Your usage over time.",
+      usageIntro: "The floating rate combines local tasks observed by this Mac, including tasks outside the wheel. Settings → Statistics puts recorded usage and estimates on one timeline.",
+      usageRateTitle: "Combined generation rate",
+      usageRateBody: "tok/s counts output tokens, which already include reasoning. It does not add reasoning twice, and it differs from the historical average rate.",
+      usageQuotaTitle: "Readings and estimates",
+      usageQuotaBody: "Weekly is the official seven-day balance. Approximate tokens, remaining work time and full-quota yield use local calibration.",
+      usageHistoryTitle: "History stays on this Mac",
+      usageHistoryBody: "Explore the last 24 hours, seven days or quota cycles. Concurrent tokens add together; overlapping working time counts once, excluding waiting, reading, idle and sleep.",
+      statsDemoTitle: "Statistics example · Select a time bin",
+      statsDemoDisclosure: "Fixed example data; no local or account access. Statistics cover this Mac’s observations, not all activity on other devices or in the cloud. No prediction accuracy is promised.",
+      statsOutput: "Recorded output",
+      statsAverage: "Average generation rate",
+      statsWork: "Working time",
+      statsQuota: "Estimated full-quota yield",
+      statsMetricLabel: "Chart metric",
+      statsTokens: "Output tokens",
+      statsSpeed: "Average tok/s",
+      statsMinutes: "Working minutes",
+      statsWeekly: "Official Weekly balance · Example",
+      statsSelection: "Selected time",
+      statsSelectionHint: "Click a time bar or use the left and right arrow keys. Both charts share the selection; overall totals stay fixed.",
+      compatTrackpadTitle: "Built-in MacBook trackpad",
+      compatTrackpad: "Global Force Touch; Magic Trackpad not supported",
+      deferredTitle: "Clear boundaries for 1.0",
+      deferredBody: "SSH tasks and automatic updates remain gray and unavailable. Download updates manually from GitHub Releases. Some semantic controls depend on the Codex version; the published release notes will identify physical-device acceptance.",
+      monitorReset: "Resets Oct 20 · 7d",
+      monitorTasks: "3 active tasks",
+      pointerFlowGlobalTitle: "Deep-press to summon",
+      pointerFlowGlobalBody: "When enabled, deep-press blank space to bring the wheel there.",
+      pointerDemoDrag: "Demo: hold and drag the compact hexagon",
+      pointerDemoPlaced: "Placed: the hexagon’s saved position",
+      pointerDemoLocal: "Deep-press the hexagon → open locally",
+      pointerDemoLocalReleased: "Fully released; the wheel stays open",
+      pointerDemoGlobalReady: "Move to blank space · Global pressure enabled in this demo",
+      pointerDemoGlobal: "Deep-press blank space → summon at the pointer",
+      pointerDemoRelease: "Fully released · Now click a task",
+      pointerDemoSelected: "Example selects “Polish landing” · No real task action"
     }
   };
 
@@ -335,6 +507,85 @@
   var metadataTitle = document.querySelector('meta[property="og:title"]');
   var metadataSocialDescription = document.querySelector('meta[property="og:description"]');
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  // Fixed, anonymous examples. No filesystem, account or network access.
+  var statisticsExample = {
+    metric: "tokens",
+    selected: 0,
+    bins: [
+      { time: "09:00", tokens: 7200, seconds: 240, weekly: 98 },
+      { time: "10:00", tokens: 5400, seconds: 180, weekly: 96 },
+      { time: "11:00", tokens: 10800, seconds: 300, weekly: 93 },
+      { time: "12:00", tokens: 3600, seconds: 120, weekly: 90 },
+      { time: "13:00", tokens: 9000, seconds: 300, weekly: 87 },
+      { time: "14:00", tokens: 6000, seconds: 240, weekly: 84 }
+    ]
+  };
+
+  function statisticsValue(bin) {
+    if (statisticsExample.metric === "speed") return bin.tokens / bin.seconds;
+    if (statisticsExample.metric === "minutes") return bin.seconds / 60;
+    return bin.tokens;
+  }
+
+  function renderStatisticsExample() {
+    var mount = document.getElementById("statisticsBars");
+    if (!mount) return;
+    var strings = copy[activeLanguage];
+    var buttons = mount.querySelectorAll("[data-stats-bin]");
+    var maximum = Math.max.apply(null, statisticsExample.bins.map(statisticsValue));
+    buttons.forEach(function (button, index) {
+      var bin = statisticsExample.bins[index];
+      var value = statisticsValue(bin);
+      var display = statisticsExample.metric === "tokens" ? (value / 1000).toFixed(1) + "k" : value.toFixed(0);
+      var metricLabel = statisticsExample.metric === "tokens" ? strings.statsTokens : statisticsExample.metric === "speed" ? strings.statsSpeed : strings.statsMinutes;
+      button.style.setProperty("--bar-height", (value / maximum * 100) + "%");
+      button.querySelector(".bar-value").textContent = display;
+      button.setAttribute("aria-label", bin.time + " · " + metricLabel + " " + display + " · Weekly " + bin.weekly + "%");
+      button.setAttribute("aria-pressed", String(index === statisticsExample.selected));
+      button.tabIndex = index === statisticsExample.selected ? 0 : -1;
+    });
+    document.querySelectorAll("[data-stats-metric]").forEach(function (button) {
+      button.setAttribute("aria-pressed", String(button.dataset.statsMetric === statisticsExample.metric));
+    });
+    var selected = statisticsExample.bins[statisticsExample.selected];
+    document.getElementById("quotaSelection").setAttribute("d", "M" + (86 + statisticsExample.selected * 100) + " 12V132");
+    document.getElementById("statisticsSelection").textContent = selected.time + " · " + strings.statsTokens + " " + (selected.tokens / 1000).toFixed(1) + "k · " + (selected.tokens / selected.seconds).toFixed(1) + " tok/s · " + selected.seconds / 60 + " min · Weekly " + selected.weekly + "%";
+  }
+
+  function initializeStatisticsExample() {
+    var mount = document.getElementById("statisticsBars");
+    statisticsExample.bins.forEach(function (bin, index) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.dataset.statsBin = String(index);
+      button.innerHTML = '<span class="bar-value"></span><span class="bar-track" aria-hidden="true"><span class="bar-fill"></span></span><span class="bar-time"></span>';
+      button.querySelector(".bar-time").textContent = bin.time;
+      button.addEventListener("click", function () {
+        statisticsExample.selected = index;
+        renderStatisticsExample();
+      });
+      button.addEventListener("keydown", function (event) {
+        var next = index;
+        if (event.key === "ArrowRight") next = (index + 1) % statisticsExample.bins.length;
+        else if (event.key === "ArrowLeft") next = (index + statisticsExample.bins.length - 1) % statisticsExample.bins.length;
+        else if (event.key === "Home") next = 0;
+        else if (event.key === "End") next = statisticsExample.bins.length - 1;
+        else return;
+        event.preventDefault();
+        statisticsExample.selected = next;
+        renderStatisticsExample();
+        mount.querySelector('[data-stats-bin="' + next + '"]').focus();
+      });
+      mount.appendChild(button);
+    });
+    document.querySelectorAll("[data-stats-metric]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        statisticsExample.metric = button.dataset.statsMetric;
+        renderStatisticsExample();
+      });
+    });
+  }
 
   function readSavedLanguage() {
     try {
@@ -392,6 +643,7 @@
 
     monitorInstances.forEach(function (monitor) { monitor.setLanguage(); });
     setModelPickerLanguage();
+    renderStatisticsExample();
 
     if (persist) {
       saveLanguage(activeLanguage);
@@ -610,11 +862,12 @@
 
     var centerCopy = document.createElement("div");
     centerCopy.className = "monitor-center-copy";
-    centerCopy.innerHTML = "<strong class=\"monitor-compact-percent\">68%</strong>"
+    centerCopy.innerHTML = "<strong class=\"monitor-compact-percent\">24.6</strong>"
       + "<div class=\"monitor-rate\">24.6 <small>tok/s</small></div>"
       + "<strong class=\"monitor-weekly\">Weekly 68%</strong>"
-      + "<span class=\"monitor-estimate\">Est. Token · 1.24M</span>"
-      + "<span class=\"monitor-hours\">Available · 42.50h</span>";
+      + "<span class=\"monitor-estimate\">≈ Token · 1.24M</span>"
+      + "<span class=\"monitor-hours\">≈ 42.50h</span>"
+      + "<span class=\"monitor-reset\"></span><span class=\"monitor-tasks\"></span>";
 
     figure.append(svg, labels, centerCopy);
     this.mount.replaceChildren(figure);
@@ -636,8 +889,10 @@
     });
     var estimate = this.centerCopy.querySelector(".monitor-estimate");
     var hours = this.centerCopy.querySelector(".monitor-hours");
-    estimate.textContent = activeLanguage === "en" ? "Est. Token · 1.24M" : "估算 Token · 1.24M";
-    hours.textContent = activeLanguage === "en" ? "Available · 42.50h" : "可用 · 42.50h";
+    estimate.textContent = copy[activeLanguage].demoEstimateTokens;
+    hours.textContent = copy[activeLanguage].demoEstimateTime;
+    this.centerCopy.querySelector(".monitor-reset").textContent = copy[activeLanguage].monitorReset;
+    this.centerCopy.querySelector(".monitor-tasks").textContent = copy[activeLanguage].monitorTasks;
   };
 
   NativeMonitor.prototype.render = function (progress) {
@@ -787,6 +1042,7 @@
     mount.replaceChildren(picker);
     mount.dataset.nativeModelInitialized = "true";
     setModelPickerLanguage();
+    renderStatisticsExample();
   }
 
   function setModelPickerLanguage() {
@@ -872,8 +1128,8 @@
 
   StageSequence.prototype.play = function () {
     this.stop();
-    if (reduceMotion.matches) {
-      if (this.reducedAction) this.reducedAction();
+    if (reduceMotion.matches || document.visibilityState !== "visible") {
+      if (reduceMotion.matches && this.reducedAction) this.reducedAction();
       return;
     }
     this.running = true;
@@ -883,7 +1139,9 @@
 
   StageSequence.prototype.advance = function () {
     var sequence = this;
-    if (!this.running || document.visibilityState !== "visible") return;
+    this.timeout = null;
+    if (!this.running) return;
+    if (reduceMotion.matches || document.visibilityState !== "visible") { this.stop(); return; }
     if (this.index >= this.timeline.length) {
       if (!this.repeats) {
         this.running = false;
@@ -1000,14 +1258,6 @@
     this.monitor.setDemoBand(bandIndex, false);
   };
 
-  RecentStatusDemo.prototype.replay = function () {
-    this.stop();
-    this.userPaused = false;
-    this.hasExpanded = false;
-    this.activeIndex = 0;
-    this.playAuto();
-  };
-
   RecentStatusDemo.prototype.handleMotionChange = function () {
     this.stop();
     if (!this.stage.classList.contains("is-in-view")) return;
@@ -1022,21 +1272,58 @@
     }
   };
 
+  var PointerDemoFrames = [
+    {"phase": "drag", "state": "drag-start", "holdMS": 1600, "expansion": 0, "monitorX": -10, "monitorY": 0, "pointerX": -10, "pointerY": 0, "padX": 40, "padY": 50, "contact": "sliding", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoDrag"},
+    {"phase": "drag", "state": "dragged", "holdMS": 2200, "expansion": 0, "monitorX": -26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "sliding", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoPlaced"},
+    {"phase": "drag", "state": "drag-released", "holdMS": 1600, "expansion": 0, "monitorX": -26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "released", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoPlaced"},
+    {"phase": "global", "state": "global-position", "holdMS": 2200, "expansion": 0, "monitorX": -26, "monitorY": 0, "pointerX": 26, "pointerY": 0, "padX": 76, "padY": 50, "contact": "sliding", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoGlobalReady"},
+    {"phase": "global", "state": "global-press", "holdMS": 1700, "expansion": 0, "monitorX": -26, "monitorY": 0, "pointerX": 26, "pointerY": 0, "padX": 76, "padY": 50, "contact": "pressing", "pressureHeld": true, "selection": null, "copyKey": "pointerDemoGlobal"},
+    {"phase": "global", "state": "global-arrive", "holdMS": 1600, "expansion": 0, "monitorX": 26, "monitorY": 0, "pointerX": 26, "pointerY": 0, "padX": 76, "padY": 50, "contact": "pressing", "pressureHeld": true, "selection": null, "copyKey": "pointerDemoTravelling"},
+    {"phase": "global", "state": "global-open", "holdMS": 2400, "expansion": 1, "monitorX": 26, "monitorY": 0, "pointerX": 26, "pointerY": 0, "padX": 76, "padY": 50, "contact": "pressing", "pressureHeld": true, "selection": null, "copyKey": "pointerDemoGlobal"},
+    {"phase": "global", "state": "global-released", "holdMS": 1800, "expansion": 1, "monitorX": 26, "monitorY": 0, "pointerX": 26, "pointerY": 0, "padX": 76, "padY": 50, "contact": "released", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoLocalReleased"},
+    {"phase": "global", "state": "global-close", "holdMS": 1600, "expansion": 0, "monitorX": 26, "monitorY": 0, "pointerX": 26, "pointerY": 0, "padX": 76, "padY": 50, "contact": "click", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoClose"},
+    {"phase": "global", "state": "second-position", "holdMS": 2400, "expansion": 0, "monitorX": 26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "sliding", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoAnother"},
+    {"phase": "global", "state": "second-press", "holdMS": 1700, "expansion": 0, "monitorX": 26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "pressing", "pressureHeld": true, "selection": null, "copyKey": "pointerDemoGlobal"},
+    {"phase": "global", "state": "second-arrive", "holdMS": 1600, "expansion": 0, "monitorX": -26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "pressing", "pressureHeld": true, "selection": null, "copyKey": "pointerDemoTravelling"},
+    {"phase": "global", "state": "second-open", "holdMS": 2400, "expansion": 1, "monitorX": -26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "pressing", "pressureHeld": true, "selection": null, "copyKey": "pointerDemoGlobal"},
+    {"phase": "global", "state": "second-released", "holdMS": 1800, "expansion": 1, "monitorX": -26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "released", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoLocalReleased"},
+    {"phase": "global", "state": "second-close", "holdMS": 1600, "expansion": 0, "monitorX": -26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "click", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoClose"},
+    {"phase": "click", "state": "released", "holdMS": 1800, "expansion": 1, "monitorX": -26, "monitorY": 0, "pointerX": -26, "pointerY": 0, "padX": 24, "padY": 50, "contact": "released", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoRelease"},
+    {"phase": "click", "state": "click-ready", "holdMS": 2200, "expansion": 1, "monitorX": -26, "monitorY": 0, "pointerX": -14, "pointerY": -14, "padX": 36, "padY": 36, "contact": "sliding", "pressureHeld": false, "selection": null, "copyKey": "pointerDemoClickReady"},
+    {"phase": "click", "state": "selected", "holdMS": 2600, "expansion": 1, "monitorX": -26, "monitorY": 0, "pointerX": -14, "pointerY": -14, "padX": 36, "padY": 36, "contact": "click", "pressureHeld": false, "selection": 1, "copyKey": "pointerDemoSelected"},
+    {"phase": "click", "state": "click-released", "holdMS": 1700, "expansion": 1, "monitorX": -26, "monitorY": 0, "pointerX": -14, "pointerY": -14, "padX": 36, "padY": 36, "contact": "released", "pressureHeld": false, "selection": 1, "copyKey": "pointerDemoSelected"}
+  ];
+
+  var ControllerDemoFrames = [
+    { phase: "hold", state: "l-held", holdMS: 1190, expansion: 0, selection: null, lHeld: true, stickX: 0, stickY: 0, copyKey: "controllerDemoHold" },
+    { phase: "hold", state: "opened", holdMS: 1700, expansion: 1, selection: null, lHeld: true, stickX: 0, stickY: 0, copyKey: "controllerDemoHold" },
+    { phase: "choose", state: "stick-ready", holdMS: 1800, expansion: 1, selection: null, lHeld: true, stickX: 0, stickY: 0, copyKey: "controllerDemoHold" },
+    { phase: "choose", state: "stick-select", holdMS: 2550, expansion: 1, selection: 1, lHeld: true, stickX: 30, stickY: -18, copyKey: "controllerDemoChoose" },
+    { phase: "release", state: "release-ready", holdMS: 1800, expansion: 1, selection: 1, lHeld: true, stickX: 30, stickY: -18, copyKey: "controllerDemoChoose" },
+    { phase: "release", state: "l-released", holdMS: 1870, expansion: 0, selection: null, lHeld: false, stickX: 0, stickY: 0, copyKey: "controllerDemoRelease" },
+    { phase: "release", state: "rest", holdMS: 1190, expansion: 0, selection: null, lHeld: false, stickX: 0, stickY: 0, copyKey: "controllerDemoRest" }
+  ];
+
   function TaskModeDemo(stage, monitor) {
     var demo = this;
     this.stage = stage;
     this.monitor = monitor;
-    this.mode = "controller";
+    this.mode = "pointer";
+    this.pointerPhase = "drag";
+    this.controllerPhase = "hold";
     this.sequence = null;
-    this.initialAutoPlayed = false;
-    this.buttons = Array.prototype.slice.call(stage.closest(".controls-section").querySelectorAll("[data-control-mode]"));
-    setRightStickDirection(stage, 1);
-    setTaskInputMode(stage, this.mode);
-
-    this.buttons.forEach(function (button, index) {
+    this.selectedPhases = { pointer: null, controller: null };
+    this.buttons = Array.prototype.slice.call(stage.querySelectorAll("[data-control-mode]"));
+    this.phaseButtons = Array.prototype.slice.call(stage.querySelectorAll("[data-pointer-phase]"));
+    this.controllerPhaseButtons = Array.prototype.slice.call(stage.querySelectorAll("[data-controller-phase]"));
+    this.phaseButtons.concat(this.controllerPhaseButtons).forEach(function (button) {
       button.addEventListener("click", function () {
-        demo.activate(button.getAttribute("data-control-mode"));
+        var mode = button.dataset.pointerPhase ? "pointer" : "controller";
+        demo.selectPhase(mode, button.dataset.pointerPhase || button.dataset.controllerPhase);
       });
+    });
+    this.buttons.forEach(function (button, index) {
+      button.addEventListener("click", function () { demo.activate(button.getAttribute("data-control-mode")); });
       button.addEventListener("keydown", function (event) {
         var nextIndex = null;
         if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % demo.buttons.length;
@@ -1049,109 +1336,136 @@
         demo.activate(demo.buttons[nextIndex].getAttribute("data-control-mode"));
       });
     });
+    this.renderStatic();
   }
+
+  TaskModeDemo.prototype.setCaption = function (selector, key) {
+    var caption = this.stage.querySelector(selector);
+    caption.dataset.i18n = key;
+    caption.textContent = copy[activeLanguage][key];
+  };
+
+  TaskModeDemo.prototype.renderPointerFrame = function (frame, animated) {
+    this.pointerPhase = frame.phase;
+    this.stage.dataset.pointerState = frame.state;
+    this.stage.dataset.pressureHeld = String(frame.pressureHeld);
+    this.stage.dataset.deviceContact = frame.contact;
+    this.stage.style.setProperty("--demo-monitor-x", frame.monitorX + "%");
+    this.stage.style.setProperty("--demo-monitor-y", frame.monitorY + "%");
+    this.stage.style.setProperty("--demo-pointer-x", frame.pointerX + "%");
+    this.stage.style.setProperty("--demo-pointer-y", frame.pointerY + "%");
+    this.stage.style.setProperty("--pad-contact-x", frame.padX + "%");
+    this.stage.style.setProperty("--pad-contact-y", frame.padY + "%");
+    this.stage.classList.toggle("pointer-static", !animated || reduceMotion.matches);
+    this.phaseButtons.forEach(function (button) { button.setAttribute("aria-pressed", String(button.dataset.pointerPhase === frame.phase)); });
+    this.setCaption(".pointer-result-copy", frame.copyKey);
+    this.setCaption("[data-device-status]", { sliding: "deviceSliding", pressing: "devicePressing", released: "deviceReleased", click: "deviceClick" }[frame.contact]);
+    setControllerHighlight(this.stage, frame.pressureHeld ? "force-touch" : "");
+    // Selection is deliberately absent for every held-pressure frame.
+    this.monitor.select(frame.pressureHeld ? null : frame.selection);
+    if (animated && !reduceMotion.matches) this.monitor.animateTo(frame.expansion);
+    else this.monitor.render(frame.expansion);
+  };
+
+  TaskModeDemo.prototype.renderPointerPhase = function () {
+    var phase = this.pointerPhase;
+    var state = { drag: "dragged", global: "second-open", click: "selected" }[this.selectedPhases.pointer || phase];
+    this.renderPointerFrame(PointerDemoFrames.find(function (frame) { return frame.state === state; }), false);
+  };
+
+  TaskModeDemo.prototype.renderControllerFrame = function (frame, animated) {
+    this.controllerPhase = frame.phase;
+    this.stage.dataset.controllerState = frame.state;
+    this.stage.dataset.lHeld = String(frame.lHeld);
+    this.stage.dataset.stickActive = String(frame.stickX !== 0 || frame.stickY !== 0);
+    this.stage.dataset.deviceContact = "released";
+    this.stage.dataset.pressureHeld = "false";
+    this.stage.style.setProperty("--demo-monitor-x", "0%");
+    this.stage.style.setProperty("--demo-monitor-y", "0%");
+    this.stage.style.setProperty("--controller-stick-x", frame.stickX + "px");
+    this.stage.style.setProperty("--controller-stick-y", frame.stickY + "px");
+    this.stage.classList.toggle("pointer-static", !animated || reduceMotion.matches);
+    setRightStickDirection(this.stage, 1);
+    setControllerHighlight(this.stage, frame.stickX ? "right-stick" : (frame.lHeld ? "l" : ""));
+    this.stage.querySelector('[data-control-highlight="l"]').classList.toggle("is-highlighted", frame.lHeld);
+    this.controllerPhaseButtons.forEach(function (button) { button.setAttribute("aria-pressed", String(button.dataset.controllerPhase === frame.phase)); });
+    this.setCaption(".controller-result-copy", frame.copyKey);
+    this.setCaption("[data-device-status]", frame.stickX ? "deviceStick" : (frame.lHeld ? "deviceLHeld" : "deviceLReleased"));
+    this.monitor.select(frame.selection);
+    if (animated && !reduceMotion.matches) this.monitor.animateTo(frame.expansion);
+    else this.monitor.render(frame.expansion);
+  };
+
+  TaskModeDemo.prototype.updatePlayback = function () {
+    this.stage.dataset.loopState = reduceMotion.matches ? "reduced-motion" : (this.sequence && this.sequence.running ? "running" : "suspended");
+    this.stage.dataset.selectedPhase = this.selectedPhases[this.mode] || "auto";
+  };
+
+  TaskModeDemo.prototype.selectPhase = function (mode, phase) {
+    this.selectedPhases[mode] = phase;
+    this.playMode(mode);
+  };
 
   TaskModeDemo.prototype.stopSequence = function () {
     if (this.sequence) this.sequence.stop();
     this.sequence = null;
-  };
-
-  TaskModeDemo.prototype.renderFinal = function () {
-    setTaskInputMode(this.stage, this.mode);
-    setControllerHighlight(this.stage, "");
-    this.monitor.select(null);
-    this.monitor.animateTo(this.mode === "pointer" ? 1 : 0);
+    if (this.monitor.frameRequest !== null) {
+      window.cancelAnimationFrame(this.monitor.frameRequest);
+      this.monitor.frameRequest = null;
+    }
+    this.stage.classList.add("pointer-static");
   };
 
   TaskModeDemo.prototype.stop = function () {
     this.stopSequence();
-    this.renderFinal();
+    this.updatePlayback();
   };
 
   TaskModeDemo.prototype.renderStatic = function () {
     this.stopSequence();
     setTaskInputMode(this.stage, this.mode);
-    this.monitor.animateTo(1);
-    if (this.mode === "controller") {
-      setRightStickDirection(this.stage, 1);
-      setControllerHighlight(this.stage, "right-stick");
-      this.monitor.select(1);
-    } else {
-      setControllerHighlight(this.stage, "force-touch");
-      this.monitor.select(null);
+    if (this.mode === "pointer") this.renderPointerPhase();
+    else {
+      var state = { hold: "opened", choose: "stick-select", release: "l-released" }[this.selectedPhases.controller || this.controllerPhase];
+      this.renderControllerFrame(ControllerDemoFrames.find(function (frame) { return frame.state === state; }), false);
     }
+    this.updatePlayback();
   };
 
   TaskModeDemo.prototype.playMode = function (mode) {
     var demo = this;
     this.stopSequence();
-    this.mode = mode === "pointer" ? "pointer" : "controller";
+    this.mode = mode === "controller" ? "controller" : "pointer";
     setTaskInputMode(this.stage, this.mode);
-    if (reduceMotion.matches) {
+    if (reduceMotion.matches || document.visibilityState !== "visible" || !this.stage.classList.contains("is-in-view")) {
       this.renderStatic();
       return;
     }
-
-    var timeline;
-    if (this.mode === "pointer") {
-      timeline = [
-        { holdMS: 420, action: function () {
-          setTaskInputMode(demo.stage, "pointer");
-          setControllerHighlight(demo.stage, "");
-          demo.monitor.select(null);
-          demo.monitor.animateTo(0);
-        } },
-        { holdMS: 900, action: function () { setControllerHighlight(demo.stage, "force-touch"); } },
-        { holdMS: 1000, action: function () {
-          setControllerHighlight(demo.stage, "");
-          demo.monitor.animateTo(1);
-          demo.monitor.select(null);
-        } }
-      ];
-    } else {
-      timeline = [
-        { holdMS: 420, action: function () {
-          setTaskInputMode(demo.stage, "controller");
-          setRightStickDirection(demo.stage, 1);
-          setControllerHighlight(demo.stage, "l");
-          demo.monitor.select(null);
-          demo.monitor.animateTo(0);
-        } },
-        { holdMS: 420, action: function () { demo.monitor.animateTo(1); } },
-        { holdMS: 720, action: function () {
-          setControllerHighlight(demo.stage, "right-stick");
-          demo.monitor.select(1);
-        } },
-        { holdMS: 1100, action: function () {
-          setControllerHighlight(demo.stage, "");
-          demo.monitor.select(null);
-          demo.monitor.animateTo(0);
-        } }
-      ];
-    }
-    this.sequence = new StageSequence(this.stage, timeline, false);
+    var frames = this.mode === "pointer" ? PointerDemoFrames : ControllerDemoFrames;
+    var selected = this.selectedPhases[this.mode];
+    if (selected) frames = frames.filter(function (frame) { return frame.phase === selected; });
+    var timeline = frames.map(function (frame) {
+      return { holdMS: frame.holdMS, action: function () {
+        if (demo.mode === "pointer") demo.renderPointerFrame(frame, true);
+        else demo.renderControllerFrame(frame, true);
+      } };
+    });
+    this.sequence = new StageSequence(this.stage, timeline, true);
     this.sequence.play();
+    this.updatePlayback();
   };
 
   TaskModeDemo.prototype.playAuto = function () {
-    if (this.initialAutoPlayed) return;
-    this.initialAutoPlayed = true;
-    this.playMode("controller");
-  };
-
-  TaskModeDemo.prototype.activate = function (mode) {
-    this.initialAutoPlayed = true;
-    this.playMode(mode);
-  };
-
-  TaskModeDemo.prototype.replay = function () {
+    if (this.sequence && this.sequence.running) return;
     this.playMode(this.mode);
   };
 
+  TaskModeDemo.prototype.activate = function (mode) {
+    this.playMode(mode);
+  };
+
   TaskModeDemo.prototype.handleMotionChange = function () {
-    this.stopSequence();
-    if (this.stage.classList.contains("is-in-view")) this.renderStatic();
-    else this.renderFinal();
+    this.playMode(this.mode);
   };
 
   function ShortcutDemo(stage) {
@@ -1163,7 +1477,7 @@
     }).filter(Boolean);
     this.activeIndex = 0;
     this.loopTimeout = null;
-    this.userPaused = false;
+    this.userSelected = false;
 
     this.buttons.forEach(function (button, index) {
       button.addEventListener("click", function () {
@@ -1184,8 +1498,8 @@
     var tablist = stage.querySelector('[role="tablist"]');
     if (tablist) {
       tablist.addEventListener("focusin", function () {
-        demo.userPaused = true;
-        demo.clearLoop();
+        demo.userSelected = true;
+        demo.scheduleNext();
       });
     }
 
@@ -1199,35 +1513,49 @@
     }
   };
 
-  ShortcutDemo.prototype.render = function (index, shouldFocus) {
+  ShortcutDemo.prototype.render = function (index, shouldFocus, animate) {
     if (!this.buttons.length) return;
     var normalizedIndex = (index + this.buttons.length) % this.buttons.length;
     this.activeIndex = normalizedIndex;
     var button = this.buttons[normalizedIndex];
     setControlEffect(this.stage, button.getAttribute("data-control-tab"));
+    this.stage.querySelectorAll("[data-control-effect]").forEach(function (effect) {
+      effect.classList.remove("is-playing");
+      if (animate && effect.classList.contains("is-active")) {
+        // Commit the neutral state so the same operation starts a fresh animation.
+        void effect.offsetWidth;
+        effect.classList.add("is-playing");
+      }
+    });
     if (shouldFocus) button.focus();
+  };
+
+  ShortcutDemo.prototype.canPlay = function () {
+    return !reduceMotion.matches && document.visibilityState === "visible" && this.stage.classList.contains("is-in-view");
   };
 
   ShortcutDemo.prototype.scheduleNext = function () {
     var demo = this;
     this.clearLoop();
-    if (this.userPaused || reduceMotion.matches || document.visibilityState !== "visible" || !this.stage.classList.contains("is-in-view")) return;
+    if (!this.canPlay()) return;
     this.loopTimeout = window.setTimeout(function () {
-      demo.render(demo.activeIndex + 1, false);
+      if (!demo.canPlay()) return;
+      demo.render(demo.activeIndex + (demo.userSelected ? 0 : 1), false, true);
       demo.scheduleNext();
-    }, 2000);
+    }, 3200);
   };
 
   ShortcutDemo.prototype.playAuto = function () {
     this.clearLoop();
-    this.render(this.activeIndex, false);
-    if (!this.userPaused && !reduceMotion.matches) this.scheduleNext();
+    this.render(this.activeIndex, false, this.canPlay());
+    this.scheduleNext();
   };
 
   ShortcutDemo.prototype.select = function (index, userInitiated, shouldFocus) {
-    if (userInitiated) this.userPaused = true;
+    if (userInitiated) this.userSelected = true;
     this.clearLoop();
-    this.render(index, shouldFocus);
+    this.render(index, shouldFocus, this.canPlay());
+    this.scheduleNext();
   };
 
   ShortcutDemo.prototype.stop = function () {
@@ -1235,16 +1563,8 @@
     this.render(this.activeIndex, false);
   };
 
-  ShortcutDemo.prototype.replay = function () {
-    this.userPaused = false;
-    this.activeIndex = 0;
-    this.playAuto();
-  };
-
   ShortcutDemo.prototype.handleMotionChange = function () {
-    this.clearLoop();
-    this.render(this.activeIndex, false);
-    if (this.stage.classList.contains("is-in-view") && !this.userPaused && !reduceMotion.matches) this.scheduleNext();
+    this.playAuto();
   };
 
   function createStageSequences() {
@@ -1404,31 +1724,19 @@
     this.schedule(false);
   };
 
-  function restartAnimation(stage) {
-    stopSceneForStage(stage);
-    stage.classList.remove("is-played");
-    void stage.offsetWidth;
-    stage.classList.add("is-played");
-    stage.classList.add("is-in-view");
-    var scene = stageSequences.get(stage);
-    if (scene && typeof scene.replay === "function") scene.replay();
-    else playSceneForStage(stage);
-  }
-
   languageToggle.addEventListener("click", function () {
     var nextLanguage = languageToggle.dataset.currentLanguage === "zh-CN" ? "en" : "zh-CN";
     applyLanguage(nextLanguage, true);
   });
 
-  document.querySelectorAll("[data-replay]").forEach(function (button) {
-    button.addEventListener("click", function () {
-      var stage = document.getElementById(button.getAttribute("data-replay"));
-      if (stage) {
-        restartAnimation(stage);
-      }
+  document.querySelectorAll("[data-note-link]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      var target = document.getElementById(link.getAttribute("href").slice(1));
+      if (target) target.focus({ preventScroll: true });
     });
   });
 
+  initializeStatisticsExample();
   applyLanguage(preferredLanguage(), false);
   initializeControllerScenes();
   initializeNativeMonitors();

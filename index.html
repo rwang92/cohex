@@ -6,9 +6,9 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-  <meta name="description" content="Cohex 将任务状态、Token 用量与切换操作集成于一个悬浮六边形，让手柄与鼠标自然掌握 Codex Desktop 的 Recent 6。">
+  <meta name="description" content="Cohex 1.0：用 Force Touch 掌握 Codex Desktop 的本地任务、生成速率与用量统计。适用于 Apple Silicon Mac，手柄可选。">
   <meta property="og:title" content="Cohex — 六个 Task，一眼掌握。">
-  <meta property="og:description" content="任务状态、Token 用量与切换操作，集成于一个悬浮六边形。用手柄或鼠标自然掌握 Codex Desktop 的 Recent 6。">
+  <meta property="og:description" content="Cohex 1.0：用 Force Touch 掌握 Codex Desktop 的本地任务、生成速率与用量统计。适用于 Apple Silicon Mac，手柄可选。">
   <meta property="og:type" content="website">
   <title>Cohex — 六个 Task，一眼掌握。</title>
   <link rel="icon" type="image/png" href="assets/CohexMark.png">
@@ -26,18 +26,18 @@
           <span class="brand-wordmark-mark" data-wordmark-piece="mark"><img class="brand-mark" src="assets/CohexWordmarkMark.png" width="755" height="656" alt=""></span>
           <span class="brand-wordmark-tail" data-wordmark-piece="hex">hex</span>
         </span>
-        <span class="beta-pill">0.9 Beta</span>
       </a>
       <div class="nav-links" aria-label="页面章节" data-i18n-aria-label="navSections">
         <a href="#recent-six" data-i18n="navTasks">Recent 6</a>
         <a href="#controls" data-i18n="navControls">操作</a>
         <a href="#shortcuts" data-i18n="navMoreControls">快捷操作</a>
+        <a href="#usage" data-i18n="navUsage">用量</a>
         <a href="#compatibility" data-i18n="navCompatibility">兼容性</a>
       </div>
       <div class="nav-actions">
         <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to English">EN</button>
-        <a class="github-button" id="githubButton" href="https://github.com/rwang92/cohex/releases/latest" target="_blank" rel="noopener noreferrer">
-          <span data-i18n="githubLabel">下载 Cohex</span>
+        <a class="github-button" id="githubButton" href="https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="githubLabel">下载 v1.0.0</span>
         </a>
       </div>
     </nav>
@@ -48,7 +48,7 @@
       <div class="ambient ambient-blue" aria-hidden="true"></div>
       <div class="ambient ambient-green" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span data-i18n="heroEyebrow">Cohex：为 Codex Desktop 而生的原生 macOS 控制器。</span></p>
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span data-i18n="heroEyebrow">为 Codex Desktop 准备的原生 macOS 助手。</span></p>
         <h1 class="hero-wordmark" id="hero-title" aria-label="Cohex">
           <span class="brand-wordmark hero-wordmark-visual" aria-hidden="true">
             <span class="brand-wordmark-initial" data-wordmark-piece="C">C</span>
@@ -57,13 +57,14 @@
           </span>
         </h1>
         <p class="hero-value"><span data-i18n="heroTitleLine1">六个 Task，</span><span class="gradient-text" data-i18n="heroTitleLine2">一眼掌握。</span></p>
-        <p class="hero-lede" data-i18n="heroBody">任务状态、Token 用量与切换操作，集成于一个悬浮六边形。用手柄保持工作节奏，也可以直接用鼠标查看与切换。</p>
+        <p class="hero-lede" data-i18n="heroBody">任务状态、Token 用量与切换操作，集成于一个悬浮六边形。用触控板掌握 Codex Desktop，也可以选择 Switch Pro 手柄。</p>
         <div class="hero-actions">
-          <a class="primary-cta" id="heroGithubButton" href="https://github.com/rwang92/cohex/releases/latest" target="_blank" rel="noopener noreferrer">
-            <span data-i18n="githubLabel">下载 Cohex</span>
+          <a class="primary-cta" id="heroGithubButton" href="https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="githubLabel">下载 v1.0.0</span>
           </a>
           <a class="text-link" href="#recent-six"><span data-i18n="exploreFeatures">了解核心功能</span><span aria-hidden="true">↓</span></a>
         </div>
+        <sup class="note-ref"><a id="note-ref-1" href="#note-1" data-note-link data-i18n-aria-label="noteLink1">[1]</a></sup>
       </div>
       <div class="hero-brand-target" aria-hidden="true"></div>
       <div class="hero-monitor-preload" data-monitor-mount="hero" hidden aria-hidden="true"></div>
@@ -77,18 +78,14 @@
           <h2 id="recent-title"><span data-i18n="recentTitleLine1">状态在边上，</span><br><span data-i18n="recentTitleLine2">注意力留在任务上。</span></h2>
         </div>
         <div class="section-intro">
-          <p data-i18n="recentBody">六条边对应最近六个 Task。颜色先告诉你哪里正在运行、哪里需要回应；中央只呈现当前可见 Task 的生成节奏与额度概览。</p>
-          <p class="disclosure" data-i18n="tokenDisclosure">tok/s 仅统计当前可见 Task 的 output 与 reasoning output。Weekly、剩余 Token 与可用时长为本机校准估算，并非 OpenAI 提供的精确额度。</p>
+          <p data-i18n="recentBody">六条边对应最近更新的六个本地任务。展开后查看名称，选择时位置保持稳定。蓝色表示活跃，黄色提示需要输入，绿色区分完成后是否已查看。</p>
+          <sup class="note-ref"><a id="note-ref-2" href="#note-2" data-note-link data-i18n-aria-label="noteLink2">[2]</a></sup>
         </div>
       </div>
 
-      <div class="demo-toolbar">
-        <span data-i18n="recentDemoLabel">从 Compact 到完整状态</span>
-        <button class="replay-button" type="button" data-replay="monitorDemo" aria-controls="monitorDemo" data-i18n-aria-label="recentReplayLabel"><span aria-hidden="true">↻</span><span data-i18n="replay">重播</span></button>
-      </div>
       <div class="glass-stage monitor-stage" id="monitorDemo" data-once-animation>
         <div class="native-monitor-mount native-monitor-overview" data-monitor-mount="recent" aria-hidden="true"></div>
-        <p class="sr-only" data-i18n="recentDemoDescription">Compact Monitor 默认仅显示 Weekly 剩余比例 68%。展开为 Recent 6 后，五种状态依次突出；中央显示 24.6 tok/s、Weekly 68% 与本机估算。</p>
+        <p class="sr-only" data-i18n="recentDemoDescription">示例从显示聚合速率 24.6 的小六边形展开；中央显示 Weekly 官方余额示例、Token 和工作时长估算、重置日期与任务数。</p>
       </div>
 
       <div class="state-legend" aria-label="Task 状态图例" data-i18n-aria-label="stateLegendLabel">
@@ -99,6 +96,9 @@
         <button class="state-item" type="button" data-demo-status="needs" data-demo-band-index="1" aria-controls="monitorDemo" aria-pressed="false"><span class="state-swatch needs" aria-hidden="true">!</span><span><strong data-i18n="stateNeeds">等待输入</strong><small>Needs input</small></span><span class="state-selected-mark" aria-hidden="true">●</span></button>
         <button class="state-item" type="button" data-demo-status="error" data-demo-band-index="4" aria-controls="monitorDemo" aria-pressed="false"><span class="state-swatch error" aria-hidden="true">×</span><span><strong data-i18n="stateError">错误</strong><small>Error</small></span><span class="state-selected-mark" aria-hidden="true">●</span></button>
       </div>
+      <sup class="note-ref"><a id="note-ref-3" href="#note-3" data-note-link data-i18n-aria-label="noteLink3">[3]</a></sup>
+
+
     </section>
 
     <section class="feature-section controls-section" id="controls" aria-labelledby="controls-title">
@@ -108,41 +108,44 @@
           <p class="eyebrow" data-i18n="controllerEyebrow">Controller &amp; Pointer</p>
           <h2 id="controls-title"><span data-i18n="controllerTitleLine1">一个六边形，</span><br><span data-i18n="controllerTitleLine2">两种自然的控制方式。</span></h2>
         </div>
-        <p class="section-intro" data-i18n="controllerBody">按住 L，用右摇杆选中 Task，松开立即切换。手离开手柄时，也可以拖动 Monitor、展开 Recent 6 并直接点击任务。</p>
+        <p class="section-intro" data-i18n="controllerBody">重按悬浮六边形或右键展开。启用全局重按后，还能在指针位置召出轮盘。松开压力后点击任务，或点击中央收起；也可选用手柄完成切换。</p>
       </div>
 
-      <div class="demo-toolbar">
-        <div class="mode-labels" role="group" aria-label="操作方式" data-i18n-aria-label="controlModeLabel">
-          <button class="mode-label is-active" type="button" data-control-mode="controller" aria-controls="taskSwitchDemo" aria-pressed="true" data-i18n="controllerMethodTitle">用手柄保持工作节奏</button>
-          <button class="mode-label" type="button" data-control-mode="pointer" aria-controls="taskSwitchDemo" aria-pressed="false" data-i18n="pointerTitle">手离开手柄，也一样自然。</button>
-        </div>
-        <button class="replay-button" type="button" data-replay="taskSwitchDemo" aria-controls="taskSwitchDemo" data-i18n-aria-label="controlsReplayLabel"><span aria-hidden="true">↻</span><span data-i18n="replay">重播</span></button>
-      </div>
-      <div class="glass-stage task-switch-panel" id="taskSwitchDemo" data-once-animation data-controller-scene="task-switch" data-controller-step="l" data-input-mode="controller">
-        <div class="task-input-stage">
-          <div class="controller-template-mount" data-controller-mount></div>
-          <div class="pointer-visual" aria-hidden="true">
-            <div class="trackpad-outline"><span class="pressure-ring pressure-ring-outer"></span><span class="pressure-ring pressure-ring-inner"></span></div>
-          </div>
-          <ol class="compact-flow controller-flow">
-            <li><strong data-i18n="flowHoldTitle">按住 L</strong><span data-i18n="flowHoldBody">从 Compact Monitor 展开 Recent 6。</span></li>
-            <li><strong data-i18n="flowChooseTitle">推动右摇杆</strong><span data-i18n="flowChooseBody">颜色与 Task 名称同步高亮。</span></li>
-            <li><strong data-i18n="flowReleaseTitle">松开 L</strong><span data-i18n="flowReleaseBody">精确切换到对应 Task；B 随时取消。</span></li>
-          </ol>
-          <ol class="compact-flow pointer-flow">
-            <li><strong data-i18n="pointerFlowMoveTitle">拖动</strong><span data-i18n="pointerFlowMoveBody">把 Compact Monitor 放在顺手的位置。</span></li>
-            <li><strong data-i18n="pointerFlowExpandTitle">展开</strong><span data-i18n="pointerFlowExpandBody">Force Touch 或右键打开 Recent 6。</span></li>
-            <li><strong data-i18n="pointerFlowChooseTitle">点击 Task</strong><span data-i18n="pointerFlowChooseBody">切换任务；点击中央即可收起。</span></li>
-          </ol>
-        </div>
+      <div class="glass-stage task-switch-panel" id="taskSwitchDemo" data-once-animation data-controller-scene="task-switch" data-controller-step="" data-input-mode="pointer" data-loop-state="suspended">
         <div class="task-output-stage">
-          <div class="native-monitor-mount" data-monitor-mount="task-switch" aria-hidden="true"></div>
+          <div class="pointer-demo-board"><div class="native-monitor-mount" data-monitor-mount="task-switch" aria-hidden="true"></div><span class="pointer-locator" aria-hidden="true"></span></div>
           <div class="result-pill"><span class="result-dot" aria-hidden="true"></span><span class="controller-result-copy" data-i18n="controllerResult">切换到「完善首页」</span><span class="pointer-result-copy" data-i18n="pointerResult">Recent 6 已展开</span></div>
-          <p class="pointer-note" data-i18n="pointerBody">Cohex 的悬浮 Monitor 不抢走 Codex 输入焦点。拖动它改变位置；Force Touch 或右键展开；点击 Task 切换，点击中央收起。</p>
         </div>
-        <p class="sr-only" data-i18n="controllerDemoDescription">一次播放的动画展示 Nintendo Switch Pro Controller：L 键发光，Recent 6 展开，右摇杆选择任务，松开后完成切换。</p>
+        <div class="task-input-stage">
+          <div class="pointer-input-visual">
+            <div class="controller-template-mount" data-controller-mount></div>
+            <div class="pointer-visual" aria-hidden="true">
+              <div class="trackpad-outline"><span class="pressure-ring pressure-ring-outer"></span><span class="pressure-ring pressure-ring-inner"></span><span class="trackpad-contact"></span></div>
+            </div>
+            <span class="device-state" data-device-status data-i18n="deviceReleased">完全松开</span>
+          </div>
+          <div class="control-deck">
+            <div class="demo-toolbar">
+              <div class="mode-labels" role="group" aria-label="操作方式" data-i18n-aria-label="controlModeLabel">
+                <button class="mode-label is-active" type="button" data-control-mode="pointer" aria-controls="taskSwitchDemo" aria-pressed="true" data-i18n="pointerTitle">触控板</button>
+                <button class="mode-label" type="button" data-control-mode="controller" aria-controls="taskSwitchDemo" aria-pressed="false" data-i18n="controllerMethodTitle">可选 Switch Pro 手柄</button>
+              </div>
+            </div>
+            <ul class="compact-flow controller-flow">
+              <li><button type="button" data-controller-phase="hold" aria-pressed="true" aria-controls="taskSwitchDemo"><strong data-i18n="flowHoldTitle">按住 L</strong></button></li>
+              <li><button type="button" data-controller-phase="choose" aria-pressed="false" aria-controls="taskSwitchDemo"><strong data-i18n="flowChooseTitle">推动右摇杆</strong></button></li>
+              <li><button type="button" data-controller-phase="release" aria-pressed="false" aria-controls="taskSwitchDemo"><strong data-i18n="flowReleaseTitle">松开 L</strong></button></li>
+            </ul>
+            <ul class="compact-flow pointer-flow">
+              <li><button type="button" data-pointer-phase="drag" aria-pressed="true" aria-controls="taskSwitchDemo"><strong data-i18n="pointerFlowMoveTitle">拖动位置</strong></button></li>
+              <li><button type="button" data-pointer-phase="global" aria-pressed="false" aria-controls="taskSwitchDemo"><strong data-i18n="pointerFlowGlobalTitle">重按召唤</strong></button></li>
+              <li><button type="button" data-pointer-phase="click" aria-pressed="false" aria-controls="taskSwitchDemo"><strong data-i18n="pointerFlowChooseTitle">点击选择</strong></button></li>
+            </ul>
+            <div class="control-note-refs"><sup class="note-ref"><a id="note-ref-4" href="#note-4" data-note-link data-i18n-aria-label="noteLink4">[4]</a></sup> <sup class="note-ref"><a id="note-ref-5" href="#note-5" data-note-link data-i18n-aria-label="noteLink5">[5]</a></sup> <sup class="note-ref"><a id="note-ref-6" href="#note-6" data-note-link data-i18n-aria-label="noteLink6">[6]</a></sup></div>
+          </div>
+        </div>
+        <p class="sr-only" data-i18n="controllerDemoDescription">默认依次演示各项操作；选择一个选项后，只重复播放该操作。减少动态效果时显示静态状态。</p>
       </div>
-      <p class="boundary-note" data-i18n="pointerBoundary">鼠标只直接操作 Token Monitor 与 Recent 6。Cohex 不会把手柄摇杆伪装成 macOS 系统光标。</p>
     </section>
 
     <section class="feature-section shortcuts-section" id="shortcuts" aria-labelledby="shortcuts-title">
@@ -152,12 +155,11 @@
           <p class="eyebrow" data-i18n="shortcutsEyebrow">More controls</p>
           <h2 id="shortcuts-title" data-i18n="shortcutsTitle">常用操作，都在熟悉的位置。</h2>
         </div>
-        <p class="section-intro" data-i18n="shortcutsBody">同一只 Switch Pro Controller 继续处理 Skill、模型与问题、听写、确认和 Plan 文档。每一步都有清晰、单一的物理入口。</p>
+        <p class="section-intro" data-i18n="shortcutsBody">可选 Nintendo Switch Pro Controller 支持 USB 与 Bluetooth。按住 L、右摇杆选择、松开切换本地任务；还可使用 Skill、模型与问题、听写、确认和 Plan 文档。</p>
       </div>
 
       <div class="demo-toolbar">
         <span data-i18n="shortcutsDemoLabel">五项核心操作</span>
-        <button class="replay-button" type="button" data-replay="shortcutDemo" aria-controls="shortcutDemo" data-i18n-aria-label="shortcutsReplayLabel"><span aria-hidden="true">↻</span><span data-i18n="replay">重播</span></button>
       </div>
       <div class="glass-stage shortcut-panel" id="shortcutDemo" data-once-animation data-controller-scene="shortcuts" data-controller-step="zl">
         <div class="control-tabs" role="tablist" aria-label="五项核心操作" data-i18n-aria-label="mappingLabel">
@@ -202,7 +204,7 @@
                   <div class="permission-question"><strong data-i18n="permissionQuestion">是否允许执行一次无文件改动的权限测试，并打开 macOS Calculator？</strong></div>
                   <code class="permission-command" data-permission-command>/usr/bin/open -a Calculator</code>
                   <div class="permission-footer">
-                    <p class="permission-demo-note" data-i18n="permissionDemoNote">体验演示 · 不会执行命令或请求系统权限</p>
+
                     <div class="grant-choices" data-permission-actions aria-label="B 拒绝，A 允许一次" data-i18n-aria-label="permissionActionsLabel">
                       <span class="grant-choice grant-choice-back" data-grant-choice="back"><b aria-hidden="true">B</b><span data-i18n="permissionBack">拒绝</span></span>
                       <span class="grant-choice grant-choice-primary" data-grant-choice="grant"><b aria-hidden="true">A</b><span data-i18n="permissionGrant">允许一次</span><i class="grant-chevron" data-permission-chevron aria-hidden="true"></i></span>
@@ -237,8 +239,29 @@
             </section>
           </div>
         </div>
-        <p class="sr-only" data-i18n="shortcutsDemoDescription">演示会自动循环 ZL、D-pad、ZR、A 与 B、Y。选择任一操作可暂停并保持对应画面。</p>
+        <p class="sr-only" data-i18n="shortcutsDemoDescription">演示会自动循环 ZL、D-pad、ZR、A 与 B、Y。选择任一操作后，将只重复演示该操作。</p>
       </div>
+      <sup class="note-ref"><a id="note-ref-7" href="#note-7" data-note-link data-i18n-aria-label="noteLink7">[7]</a></sup>
+    </section>
+
+    <section class="feature-section usage-section" id="usage" aria-labelledby="usage-title">
+      <div class="section-heading"><div><p class="section-number">04</p><p class="eyebrow" data-i18n="usageEyebrow">Token Monitor · Statistics</p><h2 id="usage-title" data-i18n="usageTitle">此刻的节奏，和积累的用量。</h2></div><p class="section-intro" data-i18n="usageIntro">悬浮速率汇总这台 Mac 观测到的本地任务，包括轮盘外的任务。设置 → 统计把实际记录与估算放在同一张时间轴上。</p></div>
+      <div class="usage-explanations">
+        <article><h4 data-i18n="usageRateTitle">聚合生成速率</h4><p data-i18n="usageRateBody">tok/s 统计输出 Token，已包含 reasoning，不会重复相加。它与历史平均速率是不同读数。</p></article>
+        <article><h4 data-i18n="usageQuotaTitle">读数与估算分清</h4><p data-i18n="usageQuotaBody">Weekly 是官方七日额度余额。≈ Token、剩余工作时长与满额产出由本地观测校准。</p></article>
+        <article><h4 data-i18n="usageHistoryTitle">历史留在本机</h4><p data-i18n="usageHistoryBody">查看最近 24 小时、7 天或额度周期。并行任务的 Token 累加，工作时间按重叠区间只计一次，排除等待、阅读、空闲与睡眠。</p></article>
+      </div>
+      <div class="glass-stage statistics-example" id="statisticsDemo" aria-labelledby="stats-demo-title">
+        <div class="demo-toolbar"><h3 id="stats-demo-title" data-i18n="statsDemoTitle">统计示例 · 点击时间柱查看</h3></div>
+        <dl class="statistics-totals"><div><dt data-i18n="statsOutput">已记录输出</dt><dd>42.0k</dd></div><div><dt data-i18n="statsAverage">平均生成速率</dt><dd>30.4 <small>tok/s</small></dd></div><div><dt data-i18n="statsWork">工作时间</dt><dd>23 <small>min</small></dd></div><div><dt data-i18n="statsQuota">满额产出估算</dt><dd>≈263k</dd></div></dl>
+        <p class="chart-label" data-i18n="statsWeekly">Weekly 官方余额 · 示例</p>
+        <svg class="weekly-chart" viewBox="0 0 620 158" role="img" aria-labelledby="weekly-chart-title"><title id="weekly-chart-title">Weekly: 100% → 84%</title><g class="chart-grid"><path d="M40 12H600M40 72H600M40 132H600"/></g><g class="chart-axis"><text x="0" y="16">100%</text><text x="8" y="76">50%</text><text x="16" y="136">0%</text></g><path class="quota-line" d="M40 12L86 14.4L186 16.8L286 20.4L386 24L486 27.6L586 31.2"/><path class="quota-selection" id="quotaSelection" d="M86 12V132"/></svg>
+        <div class="statistics-metrics" role="group" data-i18n-aria-label="statsMetricLabel"><button type="button" data-stats-metric="tokens" aria-pressed="true" data-i18n="statsTokens">输出 Token</button><button type="button" data-stats-metric="speed" aria-pressed="false" data-i18n="statsSpeed">平均 tok/s</button><button type="button" data-stats-metric="minutes" aria-pressed="false" data-i18n="statsMinutes">工作分钟</button></div>
+        <div class="statistics-bars" id="statisticsBars" role="group" data-i18n-aria-label="statsSelection"></div>
+        <p class="statistics-selection" id="statisticsSelection" role="status" aria-live="polite"></p>
+        <sup class="note-ref"><a id="note-ref-8" href="#note-8" data-note-link data-i18n-aria-label="noteLink8">[8]</a></sup>
+      </div>
+      <sup class="note-ref"><a id="note-ref-9" href="#note-9" data-note-link data-i18n-aria-label="noteLink9">[9]</a></sup>
     </section>
 
     <section class="compatibility-section" id="compatibility" aria-labelledby="compatibility-title">
@@ -249,10 +272,11 @@
         <article><span aria-hidden="true">M</span><strong data-i18n="compatAppleSiliconTitle">Apple Silicon</strong><p data-i18n="compatAppleSilicon">arm64 原生构建</p></article>
         <article><span aria-hidden="true">14+</span><strong data-i18n="compatMacOSTitle">macOS 14+</strong><p data-i18n="compatMacOS">支持浅色、深色与辅助功能设置</p></article>
         <article><span aria-hidden="true">⌘</span><strong data-i18n="compatCodexTitle">Codex Desktop</strong><p data-i18n="compatCodex">面向当前桌面 Task 工作流</p></article>
-        <article><span aria-hidden="true">◖◗</span><strong data-i18n="compatControllerTitle">Nintendo Switch Pro</strong><p data-i18n="compatController">USB 与 Bluetooth</p></article>
-        <article><span aria-hidden="true">A11Y</span><strong data-i18n="compatAccessibilityTitle">Accessibility</strong><p data-i18n="compatAccessibility">部分语义操作需要 macOS 授权</p></article>
-        <article><span aria-hidden="true">⌁</span><strong data-i18n="compatLocalTitle">Local by design</strong><p data-i18n="compatLocal">无开发者运营的后端或分析 SDK</p></article>
+        <article><span aria-hidden="true">◖◗</span><strong data-i18n="compatControllerTitle">手柄可选</strong><p data-i18n="compatController">Nintendo Switch Pro · USB / Bluetooth</p></article>
+        <article><span aria-hidden="true">◎</span><strong data-i18n="compatTrackpadTitle">MacBook 内置触控板</strong><p data-i18n="compatTrackpadFeature">Force Touch 全局唤出</p><sup class="note-ref"><a id="note-ref-10" href="#note-10" data-note-link data-i18n-aria-label="noteLink10">[10]</a></sup></article>
+        <article><span aria-hidden="true">A11Y</span><strong data-i18n="compatAccessibilityTitle">Accessibility</strong><p data-i18n="compatAccessibilityFeature">原生系统辅助功能</p></article>
       </div>
+      <div class="release-boundaries"><h3 data-i18n="deferredTitle">1.0 的明确边界</h3><sup class="note-ref"><a id="note-ref-11" href="#note-11" data-note-link data-i18n-aria-label="noteLink11">[11]</a></sup><span class="disabled-feature" aria-disabled="true">SSH</span><span class="disabled-feature" aria-disabled="true">Updates</span></div>
     </section>
 
     <section class="brand-story-section" aria-labelledby="brand-story-title">
@@ -279,7 +303,25 @@
       </span>
       <p data-i18n="footerTagline">六个 Task，一眼掌握。</p>
     </div>
-    <div class="footer-disclosures"><p data-i18n="independenceDisclosure">Cohex 是独立项目，与 OpenAI、Apple、Nintendo 或 Work Louder 无隶属、赞助或背书关系。所有产品名称与商标归其各自所有者。</p><p data-i18n="privacyDisclosure">页面动画使用匿名固定示例，不读取本机 Task、Token 或任何个人数据。</p></div>
+    <div class="footer-disclosures"><nav class="footer-links" aria-label="文档链接" data-i18n-aria-label="footerNavLabel"><a href="SUPPORT.md" data-i18n="supportLink">安装与常见问题</a><a href="PRIVACY.md" data-i18n="privacyLink">隐私</a><a href="CHANGELOG.md" data-i18n="changelogLink">版本变化</a></nav><sup class="note-ref"><a id="note-ref-12" href="#note-12" data-note-link data-i18n-aria-label="noteLink12">[12]</a></sup></div>
+
+    <section class="footnotes" id="notes" aria-labelledby="notes-title">
+      <h2 id="notes-title" data-i18n="notesTitle">说明</h2>
+      <ol>
+        <li id="note-1" tabindex="-1"><p data-i18n="releaseNotice">Cohex v1.0.0 适用于 Apple Silicon、macOS 14 及以上版本。安装包通过 GitHub Releases 提供，已完成 Developer ID 签名和 Apple 公证。</p><a class="note-back" href="#note-ref-1" data-note-link data-i18n-aria-label="noteBack1">↩</a></li>
+        <li id="note-2" tabindex="-1"><p data-i18n="tokenDisclosure">默认颜色可在设置 → 通用自定义。图标、名称和选中标记也传达状态；不会覆盖你保存的配色。</p><p data-i18n="paletteNote">鲜绿：完成未读 · 浅绿：完成已读 · 白：空闲 · 灰：状态未知。这里展示出厂默认色。</p><a class="note-back" href="#note-ref-2" data-note-link data-i18n-aria-label="noteBack2">↩</a></li>
+        <li id="note-3" tabindex="-1"><p data-i18n="readNote">完成后进入任务，持续查看约 10 秒并确认仍可见，或更早离开时，Cohex 会标为已读。若任务在你查看时完成，会等到离开后标记；这不是账号全局未读状态。</p><a class="note-back" href="#note-ref-3" data-note-link data-i18n-aria-label="noteBack3">↩</a></li>
+        <li id="note-4" tabindex="-1"><p><span data-i18n="pointerBody">全局重按需要主动启用，默认使用 Medium 155%。可在设置 → 触控板调整力度并练习。只支持 MacBook 内置触控板的全局唤出。</span> <span data-i18n="pointerFlowMoveBody">把小六边形拖到顺手处。</span> <span data-i18n="pointerFlowExpandBody">在六边形上重按，展开后完全松开。</span> <span data-i18n="pointerFlowGlobalBody">启用后，在空白处重按，轮盘来到指针位置。</span> <span data-i18n="pointerFlowChooseBody">先完全松开压力，再点击任务。</span></p><a class="note-back" href="#note-ref-4" data-note-link data-i18n-aria-label="noteBack4">↩</a></li>
+        <li id="note-5" tabindex="-1"><p data-i18n="pointerBoundary">网页只是循环演示，不监听你的触控板。Magic Trackpad 全局唤出不在 1.0 支持范围内。</p><a class="note-back" href="#note-ref-5" data-note-link data-i18n-aria-label="noteBack5">↩</a></li>
+        <li id="note-6" tabindex="-1"><p><span data-i18n="flowHoldBody">从 Compact Monitor 展开 Recent 6。</span> <span data-i18n="flowChooseBody">颜色与 Task 名称同步高亮。</span> <span data-i18n="flowReleaseBody">向选中的本地任务发送切换请求；B 随时取消。</span></p><a class="note-back" href="#note-ref-6" data-note-link data-i18n-aria-label="noteBack6">↩</a></li>
+        <li id="note-7" tabindex="-1"><p data-i18n="permissionDemoNote">体验演示 · 不会执行命令或请求系统权限</p><a class="note-back" href="#note-ref-7" data-note-link data-i18n-aria-label="noteBack7">↩</a></li>
+        <li id="note-8" tabindex="-1"><p data-i18n="statsSelectionHint">点击时间柱，或使用左右方向键。两张图保持同一选择，总计不随选择改变。</p><a class="note-back" href="#note-ref-8" data-note-link data-i18n-aria-label="noteBack8">↩</a></li>
+        <li id="note-9" tabindex="-1"><p data-i18n="statsDemoDisclosure">固定演示数据，不读取本机或账号。统计覆盖本机观测，不代表其他设备或云端的全部活动，也不承诺预测准确度。</p><a class="note-back" href="#note-ref-9" data-note-link data-i18n-aria-label="noteBack9">↩</a></li>
+        <li id="note-10" tabindex="-1"><p data-i18n="compatTrackpad">Force Touch 全局唤出；Magic Trackpad 暂不支持</p><p data-i18n="compatAccessibility">按需授予辅助功能；指南中查看输入权限</p><a class="note-back" href="#note-ref-10" data-note-link data-i18n-aria-label="noteBack10">↩</a></li>
+        <li id="note-11" tabindex="-1"><p data-i18n="deferredBody">SSH 任务和自动更新保持灰色、不可用。更新通过 GitHub Releases 手动下载安装。部分 Codex 语义操作随桌面版本变化；设备验收范围随正式发布说明公布。</p><a class="note-back" href="#note-ref-11" data-note-link data-i18n-aria-label="noteBack11">↩</a></li>
+        <li id="note-12" tabindex="-1"><p data-i18n="independenceDisclosure">Cohex 是独立项目，与 OpenAI、Apple、Nintendo 或 Work Louder 无隶属、赞助或背书关系。所有产品名称与商标归其各自所有者。</p><p data-i18n="privacyDisclosure">所有动画和统计使用固定匿名示例，不读取本机任务、Token 或个人数据。</p><a class="note-back" href="#note-ref-12" data-note-link data-i18n-aria-label="noteBack12">↩</a></li>
+      </ol>
+    </section>
   </footer>
 
   <template id="switchProControllerTemplate">

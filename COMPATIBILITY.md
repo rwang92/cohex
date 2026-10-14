@@ -1,96 +1,138 @@
 # Compatibility
 
-## Supported target
+This document describes **Cohex 1.0.0 (6)**. Product targets, completed package
+checks and hardware-validation limits are identified separately below.
 
-| Component | Supported target |
+## Supported target for 1.0
+
+| Component | Target |
 |---|---|
-| Mac | Apple Silicon (`arm64`) only |
+| Mac | Apple Silicon (`arm64`) |
 | macOS | macOS 14 or newer |
-| Codex | Codex Desktop |
-| Controller | Genuine Nintendo Switch Pro Controller |
-| Connection | USB or Bluetooth |
-| Distribution | Developer ID signed, notarized, stapled DMG |
+| Host | Codex Desktop |
+| Pointer controls | Drag the monitor, right-click to expand, click tasks or center |
+| Global Force Touch | MacBook built-in Force Touch trackpad; explicit opt-in |
+| Controller, optional | Genuine Nintendo Switch Pro Controller over USB or Bluetooth |
+| Task wheel | Six most recently updated local tasks |
+| SSH tasks | Unavailable; gray release-gated control |
+| Automatic / in-app updates | Unavailable; manual GitHub Releases download |
+| Official distribution | Developer ID signed, notarized and stapled DMG |
 
-The app is a beta. A supported target means the implementation and release process are designed for that combination; it does not replace the release smoke-test matrix. Published release notes must say which macOS versions and USB/Bluetooth paths were physically tested.
+A supported target describes the intended combination. It does not establish
+that every Mac model, permission flow, USB/Bluetooth path or physical button
+has been tested. The validation scope below records the available evidence.
 
-## Last tested
+## Force Touch and pointer input
 
-| Cohex release | Release date | Codex Desktop build | Verified scope |
-|---|---|---|---|
-| `0.9.2 (2)` | 2026-08-10 | `26.803.61601` | X/Plan routing after assigning a real **Toggle plan mode** shortcut in Codex |
-| `0.9.2 (2)` | 2026-08-10 | `26.803.81509` | X/Plan routing after assigning a real **Toggle plan mode** shortcut in Codex |
+The compact hexagon can be dragged and opened with a local deep press or
+right-click. Global activation is a separate opt-in in the Usage Guide or
+Settings → Trackpad. Fresh installations start with global pressure off and
+Medium 155%; compatible saved pressure preferences take precedence.
 
-These entries identify builds used for focused compatibility checks. They are
-not a hard-coded Codex support range and do not imply that the full
-USB/Bluetooth, clean-account, permission, or every-button matrix was
-independently completed on each build.
+Global activation supports one uniquely identified MacBook built-in trackpad.
+Magic Trackpad global activation is not supported. The factory profile is a
+starting setting, not a claim of calibration for every device. A demo or a
+passing synthetic test does not prove physical pressure timing. Release fully,
+then click a task or the center; practice examples never navigate real tasks.
 
-## Not supported
+## Local tasks, colors and readings
 
-- Intel Macs
-- Windows, Linux, iOS, iPadOS, or visionOS
-- Joy-Con, Nintendo Switch 2 Pro Controller, Xbox, PlayStation, generic HID, or third-party “Pro-compatible” controllers
-- Mac App Store installation
-- unattended or managed-enterprise deployment
+Local task selection dispatches the exact selected task link. The sidebar does
+not need to remain open. Slots stay stable during selection; later catalog
+updates apply after the interaction. Tasks outside the six displayed slots can
+still contribute to aggregate generation rate and Statistics.
 
-Those devices or environments may expose similar inputs, but they are not part of version 0.9's support contract.
+Default colors are Active blue `#9CB6F6`, Complete unread green `#34D66B`,
+Complete viewed pale green `#B5E3BA`, Needs Input yellow `#F6E19D`, Error pink
+`#F0A2BB`, Idle white `#FAFAFA` and Unknown gray `#A8A8AD`. All seven are
+customizable. Status also uses names, symbols and selection cues; saved colors
+are preserved.
+
+Completion reading is Cohex's in-memory observation, not Codex account-wide
+unread state. A verified visit after completion acknowledges viewing after ten
+seconds and a fresh visibility check, or earlier on departure. Completion
+during an existing visit waits for departure. Ambiguous visibility remains
+pending; startup history does not manufacture unread attention.
+
+Live `tok/s` aggregates output from local tasks observed by this Mac. Output
+already includes reasoning output. Statistics average speed uses output with
+confirmed working-time coverage, so it can differ from the floating live rate.
+Concurrent Token counts add together; overlapping work time counts once.
+Waiting, reading, idle and sleep do not count as work.
+
+Weekly is an official seven-day balance. Remaining Token, remaining work time
+and full-quota yield are estimates from local calibration. Evidence may be
+insufficient, stale or incomplete. Other devices and cloud activity may be
+absent. No account-wide token allowance or measured prediction accuracy is claimed.
 
 ## Codex version sensitivity
 
-Cohex routes actions in descending stability:
+Cohex first uses the user's real Codex keyboard binding, including an explicit
+disabled binding; it then uses supported shortcut defaults or exact task links.
+A changed Codex build does not by itself disable stable shortcuts. Semantic
+Accessibility actions remain sensitive to Codex's visible UI, including models,
+structured choices, Stop, guarded deletion, Skill insertion and Plan documents.
+Ambiguous controls fail closed rather than guessing.
 
-1. the user's actual Codex keyboard binding, including an explicit disabled (`null`) binding;
-2. documented Codex keyboard defaults and stable Desktop defaults, used across Codex builds;
-3. documented `codex://` deep links;
-4. commands marked configured-only, available only when the user has assigned a real binding;
-5. bounded Accessibility semantics for actions without a reliable public command.
+X / Plan Mode needs a real **Toggle plan mode** binding in Codex. `Shift+Tab`
+is not treated as a reliable substitute. Y opens or closes the Plan document;
+it does not toggle Plan Mode. Dictation remains owned by Codex Desktop.
 
-Codex's Chromium Accessibility tree can change between releases. Shortcut-backed navigation and simple Return/Escape dispatch are generally less sensitive than model/Reasoning verification, structured choices, the Plan-document open action, manually mapped Stop, user-message navigation, R3 latest-position navigation, guarded Backspace, Usage discovery, and Skill insertion.
+## Permissions
 
-Cohex does not re-gate documented or stable Desktop shortcut defaults after a Codex version change. It still fails closed when a configured-only command lacks a binding or when a destructive/context-sensitive Accessibility result cannot be uniquely verified. A new Codex build can therefore make a semantic Accessibility feature temporarily unavailable without disabling stable shortcut-backed features.
-
-Plan Mode is configured-only. X resolves and sends Codex's actual **Toggle plan
-mode** binding; users must assign that shortcut in Codex Keyboard Shortcuts.
-`Shift+Tab` is not treated as a reliable Plan Mode shortcut. If no real binding
-is configured, Plan Mode safely remains unavailable rather than guessing.
-
-## Permission matrix
-
-| Feature | Accessibility required |
+| Capability | Permission boundary |
 |---|---|
-| Controller connection and local overlays | No |
-| Token Monitor rendering, dragging, and radial selection | No |
-| Documented shortcut dispatch and native previous/next task | No |
-| Command Menu keyboard navigation | No |
-| A/B native Return/Escape | No |
-| L sidebar shortcut and L3 app activation | No |
-| Recent 6 UUID deep-link request | No |
-| Model/Reasoning result verification | Yes |
-| Structured permission/question selection, Plan-document open, and manually mapped Stop | Yes |
-| User-message and R3 latest-position navigation | Yes |
-| Skill insertion at the caret | Yes |
-| Guarded composer Backspace | Yes |
-| Manually mapped Usage discovery | Yes |
+| Controller-generated keyboard and semantic actions | macOS Accessibility for the installed Cohex copy |
+| Trackpad global pressure | Input channel availability shown in the guide; Accessibility may already provide access |
+| Input Monitoring | Grant only if the guide reports it is needed for the selected input path |
+| Dictation microphone | Owned by Codex Desktop; Cohex does not request microphone permission |
+| Controller | Normal GameController access; capability varies by macOS device descriptor |
 
-Cohex does not request microphone permission. Codex Desktop owns dictation and microphone access. Cohex suppresses B while ZR owns a dictation session; it does not capture or restore composer text.
+An application cannot grant its own Accessibility permission. Install the
+official copy in `/Applications` and grant permission through macOS. Running
+the executable from Terminal is not a valid independent permission test.
 
-## USB, Bluetooth, and haptics
+Controller haptics require support exposed by `GCController.haptics`. Cohex does
+not promise Nintendo HD Rumble compatibility or universal controller support.
+The Controller pane remains browsable, but read-only while disconnected.
 
-USB and Bluetooth are both product targets. Report timing, optional stick-click exposure, and haptic availability are controlled partly by macOS and the controller firmware.
+## Appearance and accessibility
 
-GameController is the primary input path. If a genuine Nintendo Pro Controller omits L3/R3 from both GameController button surfaces, Cohex uses a narrow, non-seizing HID fallback for the standard stick-button usages only. Haptics are used only when macOS exposes `GCController.haptics`; the app does not send Nintendo's private HD Rumble protocol.
+The app supports English and Simplified Chinese, light/dark appearance,
+Increase Contrast, Reduce Transparency, Reduce Motion and VoiceOver semantics.
+Native Glass is used when available; macOS 14–25 use system material fallbacks.
+Offscreen rendering is not proof of native Glass, spoken VoiceOver output or
+physical-device acceptance.
 
-Automated tests cannot prove physical latency, Bluetooth ordering, haptic feel, or every button on every Mac. These remain release smoke-test requirements.
+## 1.0 validation scope
 
-## Experimental compatibility
+The 1.0.0 (6) arm64 package passed Developer ID signature, hardened runtime,
+notarization, stapling, mounted-app verification and Gatekeeper checks. The full
+automated suite recorded 2,617 tests with zero failures and one explicit
+live-host probe skipped.
 
-The following features are disabled by default and are not part of the base support contract:
+The final package has no recorded fresh-user permission acceptance, the planned
+20 deep presses and 50 ordinary clicks/holds/drags, or complete physical device
+matrix. Input focus/Space changes, sleep/wake cleanup, native energy use,
+controller USB/Bluetooth paths and haptics, and spoken VoiceOver still need
+release-specific physical coverage. Multiple real Weekly cycles and estimate
+prediction accuracy remain unmeasured. Automated tests and website demos do not
+establish those results.
 
-- shared local App Server attachment for fuller background task status and experimental direct model control;
-- physical Codex Micro lighting output over a community-observed Vendor HID protocol.
+## Historical focused checks
 
-The app does not emulate a Codex Micro, use a private OpenAI renderer protocol, patch Codex, or modify its ASAR. A successful unit test, socket connection, model count, or HID write is not proof of end-to-end behavior on a user's device.
+| Published Cohex | Date | Codex Desktop build | Verified scope |
+|---|---|---|---|
+| 0.9.2 (2) | 2026-08-10 | 26.803.61601 | X/Plan with a real Toggle plan mode binding |
+| 0.9.2 (2) | 2026-08-10 | 26.803.81509 | X/Plan with a real Toggle plan mode binding |
 
-## Accessibility and appearance
+These records are not a hard-coded support range or a complete hardware matrix.
+They do not extend the 1.0 validation scope above.
 
-The app supports Light/Dark appearance, Increase Contrast, Reduce Transparency, Reduce Motion, and VoiceOver semantics. Native Liquid Glass is used when available; macOS 14–25 use system material fallbacks.
+## Unavailable in 1.0
+
+Intel Macs, other operating systems, third-party controllers and Magic Trackpad
+global activation are outside the supported target. SSH connections, remote
+catalogs and remote navigation are release-gated off even if an old preference
+was enabled. In-app update checks, downloads and installations remain disabled.
+Dormant compatibility code is not an available product feature.

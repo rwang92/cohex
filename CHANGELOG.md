@@ -2,6 +2,66 @@
 
 All notable public changes to Cohex are documented here.
 
+## [1.0.0] — 2026-10-13
+
+Release build: **1.0.0 (6)** — Your Codex tasks, one press away.
+[Download for Apple Silicon](https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg).
+
+### Added
+
+- A bilingual interactive Usage Guide with demonstrations and safe practice for
+  dragging, local Force Touch, global pressure, readings and task colors.
+- Global pressure for MacBook built-in Force Touch trackpads, with explicit
+  opt-in, a Medium 155% fresh-install default and a separate practice sheet.
+  Global pressure starts off; fully release, then click to select a task.
+- Local Statistics for recorded output, average generation speed, working time,
+  Weekly balance and approximate full-quota yield, with recent ranges and quota
+  cycle history. Numeric summaries remain on this Mac.
+
+### Changed
+
+- Position the product around the trackpad and local task wheel. Nintendo Switch
+  Pro Controller support over USB/Bluetooth remains optional.
+- Show the six most recently updated local tasks, with stable slots during a
+  selection and navigation while Codex's sidebar is closed. Aggregate live rate
+  also includes observed tasks outside the wheel.
+- Expose all seven configurable status colors together, preserve existing RGB
+  choices, and distinguish bright-green complete unread from pale-green viewed.
+- Unify Weekly estimates around official balance observations and locally
+  observed output/work coverage. Output already includes reasoning; concurrent
+  work shares one clock. Token and time estimates can become available separately.
+- Organize Settings into General, Statistics, Trackpad, Controller and Feedback.
+  Practice, permissions and guide completion remain independent.
+
+### Fixed
+
+- Avoid counting reasoning output twice in generation estimates.
+- Avoid turning waiting, reading, idle, sleep or missing coverage into work time.
+- Keep demonstrated practice separate from physical success and cancel pending
+  input/guide transitions on focus loss, navigation, closing and sleep.
+- Avoid redundant Statistics database writes when the full capacity estimate
+  is unchanged, and keep the save cadence stable across wall-clock changes.
+
+### Requirements and update
+
+- Apple Silicon (`arm64`), macOS 14 or newer, and Codex Desktop.
+- Quit Cohex before replacing it in Applications. Settings and local Statistics
+  history are retained; macOS may require a new Accessibility grant.
+
+### Limitations and validation
+
+- SSH tasks and all in-app updating are disabled. Use manual GitHub Releases
+  downloads; old SSH preferences cannot bypass the release gate.
+- Magic Trackpad global activation, Intel Macs and third-party controllers are
+  outside the supported target.
+- The final package passed Developer ID signature, notarization, stapling and
+  Gatekeeper checks. The automated suite recorded 2,617 tests with zero failures
+  and one live-host probe skipped.
+- Final-package fresh-user checks, repeated physical-pressure trials and the
+  device matrix are not recorded. Spoken VoiceOver, controller paths and real
+  multi-cycle estimate accuracy are not comprehensively verified. See
+  [COMPATIBILITY.md](COMPATIBILITY.md) for the scope.
+
 ## [0.9.2] - 2026-08-10
 
 ### Added
