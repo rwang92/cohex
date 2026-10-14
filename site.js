@@ -3,7 +3,7 @@
 
   /* Public product and distribution repository. */
   var SiteConfig = Object.freeze({
-    githubURL: "https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg"
+    githubURL: "https://github.com/rwang92/cohex/releases/latest"
   });
 
   /* Mirrors the production Swift constants. scripts/tests/site_policy_test.sh
