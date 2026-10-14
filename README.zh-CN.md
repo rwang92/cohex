@@ -14,7 +14,7 @@
 
 [下载 Cohex 1.0](https://github.com/rwang92/cohex/releases/download/v1.0.0/Cohex-1.0.0-arm64.dmg)
 · [产品主页](https://rwang92.github.io/cohex/)
-· [发布说明](https://github.com/rwang92/cohex/releases/tag/v1.0.0#简体中文)
+· [发布说明](https://github.com/rwang92/cohex/releases/tag/v1.0.0#user-content-简体中文)
 · [安装与帮助](SUPPORT.zh-CN.md)
 
 Cohex 是为 Codex Desktop 准备的免费专有原生 macOS 助手。重按触控板，
