@@ -27,30 +27,21 @@ generation speed and usage history. A controller is optional.
   to open Recent 6. Opt into global pressure to summon it at the pointer with a
   MacBook built-in trackpad. Global pressure is off by default. Fully release,
   then click a task to switch or the center to close; releasing alone does not select.
-- **A guide you can practice.** One bilingual guide demonstrates dragging,
-  pressing the hexagon, pressing blank space, readings and task colors. Reopen
-  Usage Guide from the menu or Settings → General. Example tasks never navigate
-  real work. Language, permission status and tutorial completion stay separate.
 - **Local Recent 6, with readable colors.** Keep Codex's sidebar closed while
   switching among the six most recently updated local tasks. Blue means active,
   yellow needs input, bright green is complete
   unread, and pale green is complete viewed. White is idle, pink is error, and
   gray is unknown. Customize all seven defaults; saved colors are preserved.
-- **Useful readings, clearly labeled.** Live `tok/s` combines observed local
-  tasks, including work outside the six slots. Output already includes reasoning.
-  Weekly is the official seven-day balance; remaining Token and working time are
-  local estimates, with sampling or missing evidence shown honestly.
-- **Local Statistics.** Review recorded output, average generation speed,
-  working time, the Weekly curve and estimated full-quota yield by recent range
-  or quota cycle. Concurrent Token counts add together; overlapping work time
-  counts once. History stays on this Mac and does not cover all account activity.
+- **Real-time data monitoring.** Live `tok/s` combines all observed local tasks,
+  including work outside the six slots. Output already includes reasoning Token.
+  Weekly shows the official seven-day balance; remaining Token, working time and
+  full-quota yield are local estimates. Review recorded output, average generation
+  speed, working time and the Weekly curve by time range or quota cycle. Concurrent
+  Token counts add together; overlapping work time counts once. History stays on
+  this Mac and does not cover all account activity.
 - **Optional Switch Pro control.** Connect a genuine Nintendo Switch Pro
   Controller over USB or Bluetooth. Hold L, choose with the right stick, and
   release to switch; mapped buttons keep familiar Codex actions close.
-
-**SSH tasks and in-app updates are unavailable in 1.0.** Their controls stay gray.
-Use GitHub Releases for manual updates. There is no automatic update check,
-download or installation in this release.
 
 ## Get started
 
